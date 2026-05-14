@@ -95,7 +95,7 @@ export default function TelegramPage() {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    fetch('https://bankautpratit.co.il/_functions/publicfeed?limit=18&_ts=' + Date.now())
+    fetch('/.netlify/functions/telegram-feed?limit=18&_ts=' + Date.now())
       .then(r => r.json())
       .then(j => {
         const items = j.items || j || []
