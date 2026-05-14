@@ -2,158 +2,167 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ערוץ טלגראם | podcast.finance',
-  description: 'עדכונים שוטפים וכתבות נבחרות מערוץ הטלגראם @PodcastFinance',
+  description: 'עדכונים שוטפים מערוץ הטלגראם @PodcastFinance',
 }
 
-const updates = [
+const posts = [
   {
-    text: 'קרן העושר לאזרחי ישראל סיימה 2025 עם תשואה דולרית של כמעט 20% — שנה שלישית של תשואה דו-ספרתית גבוהה. הקרן הגדילה את היקף הכספים שבניהולה ל-2.8 מיליארד דולר.',
+    title: 'קרן העושר — מאחורי המספרים של הדוח השנתי 2025',
+    excerpt: 'הקרן לאזרחי ישראל סיימה את שנת 2025 עם תשואה דולרית של כמעט 20%, שנה שלישית של תשואה דו-ספרתית גבוהה. שיחה עם מנהלת מחלקת הניהול לנה קרופלניק.',
     date: '30 אפריל 2026',
     tag: 'השקעות',
+    image: 'https://img.youtube.com/vi/iDfsKlitOCw/mqdefault.jpg',
     link: 'https://www.youtube.com/watch?v=iDfsKlitOCw',
   },
   {
-    text: 'שוק ההון הגיב למבצע שאגת הארי בצורה חיובית מאוד בשבוע הראשון — ביצועים מהטובים בעולם. מחקר חדש של הרשות לני"ע.',
-    date: '30 אפריל 2026',
-    tag: 'שוק הון',
-    link: 'https://www.new.isa.gov.il',
-  },
-  {
-    text: 'נגיד בנק ישראל פרופ׳ אמיר ירון: האתגרים הצפויים לכלכלת ישראל כתוצאה מעלייה בתוואי הגרעון הממשלתי — הרצאה מלאה בכנס מכון אהרן.',
+    title: 'דברי נגיד בנק ישראל — פרופ׳ אמיר ירון',
+    excerpt: 'הרצאה בכנס מכון אהרן 2026 — מגמות לכלכלת ישראל לאור המלחמה והאתגרים הצפויים מעלייה בתוואי הגרעון הממשלתי.',
     date: '25 אפריל 2026',
     tag: 'מאקרו',
+    image: 'https://img.youtube.com/vi/PR4Y9KGQl5o/mqdefault.jpg',
     link: 'https://www.youtube.com/watch?v=PR4Y9KGQl5o',
   },
   {
-    text: 'עלות הפשיעה העודפת בחברה הערבית למשק הישראלי מוערכת בכ-0.5% מהתוצר — כ-10 מיליארד ₪ בשנה. דוח חדש של הכלכלן הראשי של משרד האוצר.',
+    title: 'המסחר בבורסה לאורך מבצע שאגת הארי',
+    excerpt: 'שוק ההון הגיב למבצע בצורה חיובית מאוד בשבוע הראשון — ביצועים מהטובים בעולם. מחקר חדש של הרשות לניירות ערך.',
+    date: '30 אפריל 2026',
+    tag: 'שוק הון',
+    image: null,
+    link: 'https://www.new.isa.gov.il',
+  },
+  {
+    title: 'המחיר הכלכלי של הפשיעה — דוח הכלכלן הראשי',
+    excerpt: 'עלות הפשיעה העודפת בחברה הערבית מוערכת בכ-0.5% מהתוצר — כ-10 מיליארד ₪ בשנה. דוח חדש של משרד האוצר.',
     date: '27 אפריל 2026',
     tag: 'כלכלה',
+    image: null,
     link: 'https://www.gov.il',
   },
   {
-    text: 'משבר הדיור: נבנות מעט מדי דירות קטנות — שוק השכירות מבוסס על משכירים פרטיים עם חוזים קצרים. מחקר מבנה חדש של מכון שורש.',
+    title: 'מבט מבני על שוק הדיור בישראל',
+    excerpt: 'משבר הדיור מתבטא בכשלים מבניים עמוקים — שוק השכירות מבוסס על משכירים פרטיים עם חוזים קצרים. מחקר חדש של מכון שורש.',
     date: '20 אפריל 2026',
     tag: 'נדל״ן',
+    image: null,
     link: 'https://backend.shoresh.institute',
   },
   {
-    text: 'ועדות חקירה בישראל מאז 1968 — סקירה היסטורית מקיפה של הכנסת. כלי חשוב להבנת מבנה הממשל.',
-    date: '10 מאי 2026',
-    tag: 'מדיניות',
-    link: 'https://fs.knesset.gov.il',
-  },
-  {
-    text: 'ניוזלטר מאי 2026 יצא לדרך! הסקירה החודשית שלנו על שוקי ההון, הכלכלה הישראלית והגלובלית — ישירות לתיבת המייל שלך.',
+    title: 'ניוזלטר מאי 2026 — גיליון חדש',
+    excerpt: 'הניוזלטר הפיננסי החודשי שלנו יצא לדרך — סקירת שוקי ההון, כלכלת ישראל והגלובלית.',
     date: '1 מאי 2026',
     tag: 'ניוזלטר',
+    image: null,
     link: 'https://nihulhon.co.il/newsletter',
-  },
-  {
-    text: 'גיליון המגזין ינואר 2026 — זמין לצפייה ולהורדה. תכנים פיננסיים, תרבות ואיכות חיים ללקוחות בנקאות פרטית.',
-    date: '15 ינואר 2026',
-    tag: 'מגזין',
-    link: 'https://finansim-magazin.vercel.app/issue/01-2026',
   },
 ]
 
 const tagColors: Record<string, string> = {
-  'השקעות': '#8B9E6B',
+  'השקעות': '#5A8F3C',
   'שוק הון': '#C9A84C',
-  'מאקרו': '#9B6BC9',
+  'מאקרו': '#7B4FC9',
   'כלכלה': '#C9764C',
-  'נדל״ן': '#4C9BC9',
-  'מדיניות': '#6B7C99',
+  'נדל״ן': '#2E7FC9',
   'ניוזלטר': '#C94C8B',
-  'מגזין': '#9B5E2A',
 }
 
 export default function TelegramPage() {
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
-      {/* Page Header */}
+      {/* Header */}
       <div className="bg-[#1C1814] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 text-sm"
-            style={{ borderColor: 'rgba(42,171,238,0.4)', color: '#7DD3F8', background: 'rgba(42,171,238,0.08)' }}
+            style={{ borderColor: 'rgba(42,171,238,0.5)', color: '#7DD3F8', background: 'rgba(42,171,238,0.1)' }}
           >
-            ✈ ערוץ טלגראם
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.793 13.4l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.461c.537-.194 1.006.131.834.953l-.476-.794z" />
+            </svg>
+            ערוץ טלגראם
           </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4 text-white">
-            ערוץ{' '}
-            <span style={{ color: '#7DD3F8' }}>הטלגראם</span>
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-black mb-4">ערוץ <span style={{ color: '#7DD3F8' }}>הטלגראם</span></h1>
           <p className="text-[#B0A090] text-lg max-w-xl mx-auto mb-6">
-            עדכונים שוטפים, כתבות נבחרות ותכנים פיננסיים — מרוכז ישירות מהערוץ
+            תכנים פיננסיים נבחרים, עדכוני שוק ופרקי פודקאסט — מרוכזים ישירות מהערוץ
           </p>
           <a
             href="https://t.me/PodcastFinance"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-white transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-white transition-all hover:scale-105 hover:shadow-lg"
             style={{ background: '#2AABEE' }}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.793 13.4l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.461c.537-.194 1.006.131.834.953l-.476-.794z" />
             </svg>
-            הצטרף לערוץ — @PodcastFinance
+            הצטרף — @PodcastFinance
           </a>
         </div>
       </div>
 
-      {/* Feed */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-xl font-bold text-[#1C1814] mb-6 flex items-center gap-2">
-          <span style={{ color: '#2AABEE' }}>✈</span> עדכונים אחרונים מהערוץ
-        </h2>
-
-        <div className="space-y-4">
-          {updates.map((update, idx) => (
-            <div key={idx} className="card-ivory rounded-xl p-5 flex gap-4">
-              {/* Icon */}
-              <div
-                className="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5"
-                style={{ background: 'rgba(42,171,238,0.12)' }}
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#2AABEE">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.793 13.4l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.461c.537-.194 1.006.131.834.953l-.476-.794z" />
-                </svg>
-              </div>
-
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-2 flex-wrap">
-                  <span className="text-xs font-semibold text-[#2AABEE]">PodcastFinance</span>
-                  <span className="text-xs text-[#8C7B65]">{update.date}</span>
-                  <span
-                    className="text-xs px-1.5 py-0.5 rounded font-medium"
-                    style={{ background: `${tagColors[update.tag] || '#C9A84C'}15`, color: tagColors[update.tag] || '#C9A84C' }}
-                  >
-                    {update.tag}
-                  </span>
-                </div>
-                <p className="text-sm text-[#1C1814] leading-relaxed mb-3">{update.text}</p>
-                {update.link && (
-                  <a
-                    href={update.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-medium transition-colors"
-                    style={{ color: '#C9A84C' }}
-                  >
-                    לקישור ←
-                  </a>
+      {/* Cards Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post, i) => (
+            <a
+              key={i}
+              href={post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-ivory rounded-xl group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 flex flex-col overflow-hidden"
+            >
+              {/* Image */}
+              <div className="relative aspect-video bg-[#1C1814] overflow-hidden">
+                {post.image ? (
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <svg className="w-12 h-12 opacity-30" viewBox="0 0 24 24" fill="#2AABEE">
+                      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.793 13.4l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.461c.537-.194 1.006.131.834.953l-.476-.794z" />
+                    </svg>
+                  </div>
                 )}
+                {/* Tag badge */}
+                <div
+                  className="absolute top-3 right-3 px-2 py-0.5 text-xs font-semibold rounded"
+                  style={{ background: `${tagColors[post.tag] || '#C9A84C'}CC`, color: '#fff' }}
+                >
+                  {post.tag}
+                </div>
               </div>
-            </div>
+
+              {/* Content */}
+              <div className="p-4 flex flex-col flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="#2AABEE">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.793 13.4l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.461c.537-.194 1.006.131.834.953l-.476-.794z" />
+                  </svg>
+                  <span className="text-xs text-[#8C7B65]">{post.date}</span>
+                </div>
+                <h3 className="font-bold text-[#1C1814] mb-2 text-sm leading-snug group-hover:text-[#A07830] transition-colors line-clamp-2">
+                  {post.title}
+                </h3>
+                <p className="text-[#5A4F3F] text-xs leading-relaxed flex-1 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                <div className="mt-3 text-xs font-medium" style={{ color: '#2AABEE' }}>
+                  לעדכון בטלגראם ←
+                </div>
+              </div>
+            </a>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        {/* Load More */}
+        <div className="text-center mt-10">
           <a
             href="https://t.me/PodcastFinance"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold text-white transition-all hover:scale-105 hover:shadow-md"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold text-white transition-all hover:scale-105"
             style={{ background: '#2AABEE' }}
           >
             לכל העדכונים בטלגראם ←

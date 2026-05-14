@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'מגזין הבנקאות הפרטית | podcast.finance',
@@ -7,15 +6,138 @@ export const metadata: Metadata = {
 }
 
 const issues = [
-  { label: 'ינואר 2026', season: 'חורף 2026', href: 'https://finansim-magazin.vercel.app/issue/01-2026', isCurrent: true, description: 'תכנים פיננסיים, סקירת שווקים לשנת 2026, מדורי תרבות ואיכות חיים.' },
-  { label: 'ספטמבר 2025', season: 'סתיו 2025', href: 'https://nihulhon.co.il/magazines/', isCurrent: false, description: 'סקירת שוק ההון הישראלי, נדל"ן והשקעות אלטרנטיביות.' },
-  { label: 'יוני 2025', season: 'קיץ 2025', href: 'https://nihulhon.co.il/magazines/', isCurrent: false, description: 'ניהול הון בעידן הריבית הגבוהה, תכנון פרישה ועוד.' },
-  { label: 'מרץ 2025', season: 'אביב 2025', href: 'https://nihulhon.co.il/magazines/', isCurrent: false, description: 'בנקאות פרטית גלובלית, חשבונות השקעה בחו"ל ועוד.' },
-  { label: 'ינואר 2025', season: 'חורף 2025', href: 'https://nihulhon.co.il/magazines/', isCurrent: false, description: 'סקירת 2024, תחזיות לשנת 2025 ואסטרטגיות השקעה.' },
-  { label: 'ספטמבר 2024', season: 'סתיו 2024', href: 'https://nihulhon.co.il/magazines/', isCurrent: false, description: 'ניהול סיכונים בתקופת אי-ודאות, קרנות גידור ועוד.' },
+  {
+    slug: '01-2026',
+    label: 'ינואר 2026',
+    num: '01',
+    year: '2026',
+    season: 'חורף 2026',
+    href: 'https://finansim-magazin.vercel.app/issue/01-2026',
+    cover: 'https://finansim-magazin.vercel.app/covers/01-2026.jpg',
+    isCurrent: true,
+    description: 'סקירת שוקי ההון לשנת 2026, ניהול עושר בעידן הסיכונים, מדורי תרבות ואיכות חיים.',
+  },
+  {
+    slug: '03-2025',
+    label: 'ספטמבר 2025',
+    num: '03',
+    year: '2025',
+    season: 'סתיו 2025',
+    href: 'https://finansim-magazin.vercel.app/issue/03-2025',
+    cover: 'https://finansim-magazin.vercel.app/covers/03-2025.jpg',
+    isCurrent: false,
+    description: 'סקירת שוק ההון הישראלי, נדל"ן והשקעות אלטרנטיביות.',
+  },
+  {
+    slug: '02-2025',
+    label: 'יוני 2025',
+    num: '02',
+    year: '2025',
+    season: 'קיץ 2025',
+    href: 'https://finansim-magazin.vercel.app/issue/02-2025',
+    cover: 'https://finansim-magazin.vercel.app/covers/02-2025.jpg',
+    isCurrent: false,
+    description: 'ניהול הון בעידן הריבית הגבוהה, תכנון פרישה ועוד.',
+  },
+  {
+    slug: '01-2025',
+    label: 'מרץ 2025',
+    num: '01',
+    year: '2025',
+    season: 'אביב 2025',
+    href: 'https://finansim-magazin.vercel.app/issue/01-2025',
+    cover: 'https://finansim-magazin.vercel.app/covers/01-2025.jpg',
+    isCurrent: false,
+    description: 'בנקאות פרטית גלובלית, חשבונות השקעה בחו"ל ועוד.',
+  },
+  {
+    slug: '04-2024',
+    label: 'ינואר 2025',
+    num: '04',
+    year: '2024',
+    season: 'חורף 2025',
+    href: 'https://finansim-magazin.vercel.app/issue/04-2024',
+    cover: 'https://finansim-magazin.vercel.app/covers/04-2024.jpg',
+    isCurrent: false,
+    description: 'סקירת 2024, תחזיות לשנת 2025 ואסטרטגיות השקעה.',
+  },
+  {
+    slug: '03-2024',
+    label: 'ספטמבר 2024',
+    num: '03',
+    year: '2024',
+    season: 'סתיו 2024',
+    href: 'https://finansim-magazin.vercel.app/issue/03-2024',
+    cover: 'https://finansim-magazin.vercel.app/covers/03-2024.jpg',
+    isCurrent: false,
+    description: 'ניהול סיכונים בתקופת אי-ודאות, קרנות גידור ועוד.',
+  },
+  {
+    slug: '02-2024',
+    label: 'יוני 2024',
+    num: '02',
+    year: '2024',
+    season: 'קיץ 2024',
+    href: 'https://finansim-magazin.vercel.app/issue/02-2024',
+    cover: 'https://finansim-magazin.vercel.app/covers/02-2024.jpg',
+    isCurrent: false,
+    description: 'השקעות בינלאומיות, פיזור תיק ומה שחשוב לדעת על חשיפה למטבע חוץ.',
+  },
+  {
+    slug: '01-2024',
+    label: 'מרץ 2024',
+    num: '01',
+    year: '2024',
+    season: 'אביב 2024',
+    href: 'https://finansim-magazin.vercel.app/issue/01-2024',
+    cover: 'https://finansim-magazin.vercel.app/covers/01-2024.jpg',
+    isCurrent: false,
+    description: 'שוק האג"ח הישראלי לאחר המלחמה, תכנון מס ואסטרטגיות לשנת 2024.',
+  },
 ]
 
+function MagazineCover({ issue }: { issue: typeof issues[0] }) {
+  return (
+    <div className="relative w-full h-full bg-[#1C1814] overflow-hidden">
+      {/* Try to load actual cover image */}
+      <img
+        src={issue.cover}
+        alt={`מגזין ${issue.label}`}
+        className="w-full h-full object-cover"
+        onError={(e) => {
+          const target = e.currentTarget as HTMLImageElement
+          target.style.display = 'none'
+          const fallback = target.nextElementSibling as HTMLElement
+          if (fallback) fallback.style.display = 'flex'
+        }}
+      />
+      {/* Fallback cover design */}
+      <div
+        className="absolute inset-0 items-center justify-center text-center px-4"
+        style={{ display: 'none', background: 'linear-gradient(160deg, #1C1814 0%, #2E2416 60%, #1C1814 100%)' }}
+      >
+        <div>
+          <div className="text-xs font-semibold tracking-widest mb-2 opacity-70" style={{ color: '#C9A84C' }}>
+            מגזין הבנקאות הפרטית
+          </div>
+          <div
+            className="text-4xl font-black leading-none"
+            style={{ background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
+          >
+            {issue.num}
+          </div>
+          <div className="text-2xl font-bold text-white mt-1">{issue.year}</div>
+          <div className="text-xs mt-3 opacity-50" style={{ color: '#C9A84C' }}>{issue.season}</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function MagazinePage() {
+  const currentIssue = issues.find(i => i.isCurrent)!
+  const archiveIssues = issues.filter(i => !i.isCurrent)
+
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
       {/* Header */}
@@ -45,35 +167,22 @@ export default function MagazinePage() {
           </h2>
           <div className="card-ivory rounded-2xl overflow-hidden shadow-md">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div
-                className="h-64 md:h-auto flex items-center justify-center relative"
-                style={{ background: 'linear-gradient(135deg, #1C1814 0%, #2A2018 100%)', minHeight: '280px' }}
-              >
-                <div className="text-center px-8">
-                  <div className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#C9A84C' }}>
-                    מגזין הבנקאות הפרטית
-                  </div>
-                  <div
-                    className="text-5xl font-black mb-2"
-                    style={{ background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
-                  >
-                    ינואר
-                  </div>
-                  <div className="text-3xl font-bold text-white">2026</div>
-                  <div className="mt-4 text-xs text-[#8C7B65]">חורף 2026</div>
-                </div>
+              {/* Cover */}
+              <div className="relative h-72 md:h-auto" style={{ minHeight: '320px' }}>
+                <MagazineCover issue={currentIssue} />
                 <div
                   className="absolute top-4 right-4 px-2.5 py-1 text-xs font-bold rounded-full"
-                  style={{ background: 'rgba(201,168,76,0.2)', color: '#E2C97E' }}
+                  style={{ background: 'rgba(201,168,76,0.9)', color: '#1C1814' }}
                 >
                   גיליון נוכחי
                 </div>
               </div>
+              {/* Info */}
               <div className="p-8 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold text-[#1C1814] mb-3">גיליון ינואר 2026</h3>
+                  <h3 className="text-2xl font-bold text-[#1C1814] mb-3">גיליון {currentIssue.label}</h3>
                   <p className="text-[#5A4F3F] leading-relaxed mb-6">
-                    תכנים פיננסיים אקטואליים, סקירת שוקי ההון לשנת 2026, ניתוחי השקעות, מדורי תרבות, פנאי ואיכות חיים — לקוחות הבנקאות הפרטית של כל הבנקים.
+                    תכנים פיננסיים אקטואליים, סקירת שוקי ההון לשנת 2026, ניתוחי השקעות, מדורי תרבות, פנאי ואיכות חיים — ללקוחות הבנקאות הפרטית של כל הבנקים.
                   </p>
                   <ul className="space-y-2 mb-6">
                     {['סקירת שווקים לשנת 2026', 'ניהול עושר בעידן הסיכונים', 'מגזין תרבות ופנאי', 'ניתוחי השקעות אקטואליים'].map(item => (
@@ -84,7 +193,7 @@ export default function MagazinePage() {
                   </ul>
                 </div>
                 <a
-                  href="https://finansim-magazin.vercel.app/issue/01-2026"
+                  href={currentIssue.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-gold text-base px-8 py-3 justify-center"
@@ -99,39 +208,32 @@ export default function MagazinePage() {
         {/* Archive */}
         <div className="mb-14">
           <h2 className="text-xl font-bold text-[#1C1814] mb-6 flex items-center gap-2">
-            <span style={{ color: '#C9A84C' }}>◇</span> ארכיון הגיליונות
+            <span style={{ color: '#C9A84C' }}>◇</span> ארכיון גיליונות
+            <span className="text-sm font-normal text-[#8C7B65]">({archiveIssues.length} גיליונות)</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {issues.map((issue) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+            {archiveIssues.map((issue) => (
               <a
-                key={issue.label}
+                key={issue.slug}
                 href={issue.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-ivory rounded-xl group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 overflow-hidden"
+                className="group flex flex-col"
               >
-                <div
-                  className="h-36 flex items-center justify-center relative"
-                  style={{ background: 'linear-gradient(135deg, #1C1814 0%, #2A2018 100%)' }}
-                >
-                  <div className="text-center">
-                    <div
-                      className="text-2xl font-black"
-                      style={{ background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
-                    >
-                      {issue.label}
-                    </div>
-                    <div className="text-xs text-[#8C7B65] mt-1">{issue.season}</div>
+                {/* Cover thumbnail */}
+                <div className="relative rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow mb-3"
+                  style={{ aspectRatio: '3/4' }}>
+                  <MagazineCover issue={issue} />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                  <div className="absolute bottom-0 inset-x-0 p-2 text-center"
+                    style={{ background: 'linear-gradient(to top, rgba(28,24,20,0.9) 0%, transparent 100%)' }}>
+                    <div className="text-white text-xs font-semibold">{issue.label}</div>
+                    <div className="text-[#C9A84C] text-xs opacity-80">{issue.season}</div>
                   </div>
-                  {issue.isCurrent && (
-                    <div className="absolute top-2 right-2 px-2 py-0.5 text-xs font-bold rounded" style={{ background: 'rgba(201,168,76,0.3)', color: '#E2C97E' }}>
-                      נוכחי
-                    </div>
-                  )}
                 </div>
-                <div className="p-4">
-                  <p className="text-xs text-[#5A4F3F] leading-relaxed mb-3 line-clamp-2">{issue.description}</p>
-                  <span className="text-xs font-medium" style={{ color: '#C9A84C' }}>לצפייה ←</span>
+                {/* Read link */}
+                <div className="text-xs font-medium text-center transition-colors" style={{ color: '#C9A84C' }}>
+                  לצפייה ←
                 </div>
               </a>
             ))}
