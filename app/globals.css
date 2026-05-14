@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-dark: #A07830;
+  --dark-bg: #0F0F0F;
+  --dark-card: #1A1A1A;
+  --dark-border: #2A2A2A;
+  --cream: #F5F0E8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Heebo', Arial, sans-serif;
+  background-color: #0F0F0F;
+  color: #F5F0E8;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .gold-text {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
+  }
+
+  .gold-border {
+    border-color: var(--gold);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-2;
+    background: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    @apply text-gray-400 text-lg mb-10;
+  }
+
+  .card-dark {
+    @apply bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-[#0F0F0F] transition-all duration-200;
+    background: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
+  }
+
+  .btn-gold:hover {
+    @apply scale-105 shadow-lg;
+    box-shadow: 0 8px 25px rgba(201, 168, 76, 0.35);
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 border;
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .btn-outline-gold:hover {
+    background: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
+    @apply text-[#0F0F0F] scale-105;
+  }
+
+  .gold-divider {
+    @apply w-16 h-0.5 mx-auto mb-4;
+    background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+  }
+
+  .gold-divider-right {
+    @apply w-16 h-0.5 mb-4;
+    background: linear-gradient(90deg, #C9A84C, transparent);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0F0F0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: #F5F0E8;
+}
