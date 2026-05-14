@@ -1,94 +1,133 @@
-import type { Metadata } from 'next'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'ערוץ טלגראם | podcast.finance',
-  description: 'עדכונים שוטפים מערוץ הטלגראם @PodcastFinance',
+import { useEffect, useState } from 'react'
+
+interface Post {
+  url?: string
+  linkUrl?: string
+  postUrl?: string
+  site?: string
+  dateISO?: string
+  title?: string
+  text?: string
+  image?: string | null
 }
 
-const posts = [
-  {
-    title: 'קרן העושר — מאחורי המספרים של הדוח השנתי 2025',
-    excerpt: 'הקרן לאזרחי ישראל סיימה את שנת 2025 עם תשואה דולרית של כמעט 20%, שנה שלישית של תשואה דו-ספרתית גבוהה. שיחה עם מנהלת מחלקת הניהול לנה קרופלניק.',
-    date: '30 אפריל 2026',
-    tag: 'השקעות',
-    image: 'https://img.youtube.com/vi/iDfsKlitOCw/mqdefault.jpg',
-    link: 'https://www.youtube.com/watch?v=iDfsKlitOCw',
-  },
-  {
-    title: 'דברי נגיד בנק ישראל — פרופ׳ אמיר ירון',
-    excerpt: 'הרצאה בכנס מכון אהרן 2026 — מגמות לכלכלת ישראל לאור המלחמה והאתגרים הצפויים מעלייה בתוואי הגרעון הממשלתי.',
-    date: '25 אפריל 2026',
-    tag: 'מאקרו',
-    image: 'https://img.youtube.com/vi/PR4Y9KGQl5o/mqdefault.jpg',
-    link: 'https://www.youtube.com/watch?v=PR4Y9KGQl5o',
-  },
-  {
-    title: 'המסחר בבורסה לאורך מבצע שאגת הארי',
-    excerpt: 'שוק ההון הגיב למבצע בצורה חיובית מאוד בשבוע הראשון — ביצועים מהטובים בעולם. מחקר חדש של הרשות לניירות ערך.',
-    date: '30 אפריל 2026',
-    tag: 'שוק הון',
-    image: null,
-    link: 'https://www.new.isa.gov.il',
-  },
-  {
-    title: 'המחיר הכלכלי של הפשיעה — דוח הכלכלן הראשי',
-    excerpt: 'עלות הפשיעה העודפת בחברה הערבית מוערכת בכ-0.5% מהתוצר — כ-10 מיליארד ₪ בשנה. דוח חדש של משרד האוצר.',
-    date: '27 אפריל 2026',
-    tag: 'כלכלה',
-    image: null,
-    link: 'https://www.gov.il',
-  },
-  {
-    title: 'מבט מבני על שוק הדיור בישראל',
-    excerpt: 'משבר הדיור מתבטא בכשלים מבניים עמוקים — שוק השכירות מבוסס על משכירים פרטיים עם חוזים קצרים. מחקר חדש של מכון שורש.',
-    date: '20 אפריל 2026',
-    tag: 'נדל״ן',
-    image: null,
-    link: 'https://backend.shoresh.institute',
-  },
-  {
-    title: 'ניוזלטר מאי 2026 — גיליון חדש',
-    excerpt: 'הניוזלטר הפיננסי החודשי שלנו יצא לדרך — סקירת שוקי ההון, כלכלת ישראל והגלובלית.',
-    date: '1 מאי 2026',
-    tag: 'ניוזלטר',
-    image: null,
-    link: 'https://nihulhon.co.il/newsletter',
-  },
-]
+function isYouTube(url: string) {
+  return /youtube\.com|youtu\.be/i.test(url || '')
+}
 
-const tagColors: Record<string, string> = {
-  'השקעות': '#5A8F3C',
-  'שוק הון': '#C9A84C',
-  'מאקרו': '#7B4FC9',
-  'כלכלה': '#C9764C',
-  'נדל״ן': '#2E7FC9',
-  'ניוזלטר': '#C94C8B',
+function PostCard({ p }: { p: Post }) {
+  const url = p.url || p.linkUrl || p.postUrl || '#'
+  const date = p.dateISO ? new Date(p.dateISO).toLocaleDateString('he-IL') : ''
+  const isYT = isYouTube(url)
+
+  return (
+    <article className="bg-white flex flex-col overflow-hidden transition-all duration-300 hover:shadow-md"
+      style={{ border: '1px solid #DDD5C0', borderRadius: '2px' }}>
+
+      {/* Image */}
+      {p.image && (
+        <a href={url} target="_blank" rel="noopener noreferrer"
+          className="block relative overflow-hidden flex-shrink-0"
+          style={{ aspectRatio: '16/7' }}>
+          <img
+            src={p.image}
+            alt={p.title || ''}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+          {isYT && (
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.6)' }}>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="white">
+                  <polygon points="5,3 13,8 5,13" />
+                </svg>
+              </div>
+            </div>
+          )}
+        </a>
+      )}
+
+      {/* Content */}
+      <div className="p-4 flex flex-col flex-1 gap-2">
+        {/* Source + date */}
+        <div className="flex items-center justify-between text-xs">
+          <span className="font-medium truncate max-w-[60%]" style={{ color: '#C9A84C' }}>
+            {p.site || 'PodcastFinance'}
+          </span>
+          {date && <time className="text-[#1C1814]/40">{date}</time>}
+        </div>
+
+        {/* Divider */}
+        <div className="h-px" style={{ background: 'rgba(201,168,76,0.2)' }} />
+
+        {/* Title */}
+        {p.title && (
+          <h3 className="font-bold text-sm leading-snug" style={{ color: '#1C1814' }}>
+            <a href={url} target="_blank" rel="noopener noreferrer"
+              className="hover:opacity-70 transition-opacity">
+              {p.title}
+            </a>
+          </h3>
+        )}
+
+        {/* Text */}
+        {p.text && (
+          <p className="text-xs leading-relaxed flex-1 line-clamp-3" style={{ color: 'rgba(28,24,20,0.6)' }}>
+            {p.text}
+          </p>
+        )}
+
+        {/* Link */}
+        <a href={url} target="_blank" rel="noopener noreferrer"
+          className="mt-auto self-start text-xs tracking-widest pb-0.5 transition-colors"
+          style={{ color: '#C9A84C', borderBottom: '1px solid rgba(201,168,76,0.3)' }}>
+          {isYT ? 'לצפייה ביוטיוב ←' : 'לעדכון בטלגראם ←'}
+        </a>
+      </div>
+    </article>
+  )
 }
 
 export default function TelegramPage() {
+  const [posts, setPosts] = useState<Post[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    fetch('https://bankautpratit.co.il/_functions/publicfeed?limit=18&_ts=' + Date.now())
+      .then(r => r.json())
+      .then(j => {
+        const items = j.items || j || []
+        setPosts(items)
+        setLoading(false)
+      })
+      .catch(() => {
+        setError(true)
+        setLoading(false)
+      })
+  }, [])
+
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
       {/* Header */}
       <div className="bg-[#1C1814] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 text-sm"
-            style={{ borderColor: 'rgba(42,171,238,0.5)', color: '#7DD3F8', background: 'rgba(42,171,238,0.1)' }}
-          >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.793 13.4l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.461c.537-.194 1.006.131.834.953l-.476-.794z" />
-            </svg>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-xs tracking-widest mb-4 uppercase" style={{ color: '#2AABEE' }}>
             ערוץ טלגראם
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">ערוץ <span style={{ color: '#7DD3F8' }}>הטלגראם</span></h1>
-          <p className="text-[#B0A090] text-lg max-w-xl mx-auto mb-6">
-            תכנים פיננסיים נבחרים, עדכוני שוק ופרקי פודקאסט — מרוכזים ישירות מהערוץ
+          </p>
+          <h1 className="text-4xl md:text-5xl font-black mb-4">
+            פודקאסט <span style={{ color: '#2AABEE' }}>פיננסים</span>
+          </h1>
+          <div className="w-12 h-px mx-auto mb-6" style={{ background: '#2AABEE' }} />
+          <p className="text-[#B0A090] text-sm max-w-xl mx-auto leading-relaxed mb-6">
+            סקירות שווקים, ניתוחי השקעות ותובנות פיננסיות — ישירות מערוץ הטלגראם
           </p>
           <a
             href="https://t.me/PodcastFinance"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-white transition-all hover:scale-105 hover:shadow-lg"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-white transition-all hover:opacity-90"
             style={{ background: '#2AABEE' }}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -99,70 +138,39 @@ export default function TelegramPage() {
         </div>
       </div>
 
-      {/* Cards Grid */}
+      {/* Feed */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post, i) => (
-            <a
-              key={i}
-              href={post.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-ivory rounded-xl group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 flex flex-col overflow-hidden"
-            >
-              {/* Image */}
-              <div className="relative aspect-video bg-[#1C1814] overflow-hidden">
-                {post.image ? (
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <svg className="w-12 h-12 opacity-30" viewBox="0 0 24 24" fill="#2AABEE">
-                      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.793 13.4l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.461c.537-.194 1.006.131.834.953l-.476-.794z" />
-                    </svg>
-                  </div>
-                )}
-                {/* Tag badge */}
-                <div
-                  className="absolute top-3 right-3 px-2 py-0.5 text-xs font-semibold rounded"
-                  style={{ background: `${tagColors[post.tag] || '#C9A84C'}CC`, color: '#fff' }}
-                >
-                  {post.tag}
-                </div>
-              </div>
+        {loading && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Array(6).fill(null).map((_, i) => (
+              <div key={i} className="animate-pulse bg-white h-52" style={{ border: '1px solid #DDD5C0' }} />
+            ))}
+          </div>
+        )}
 
-              {/* Content */}
-              <div className="p-4 flex flex-col flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="#2AABEE">
-                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.793 13.4l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.461c.537-.194 1.006.131.834.953l-.476-.794z" />
-                  </svg>
-                  <span className="text-xs text-[#8C7B65]">{post.date}</span>
-                </div>
-                <h3 className="font-bold text-[#1C1814] mb-2 text-sm leading-snug group-hover:text-[#A07830] transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-[#5A4F3F] text-xs leading-relaxed flex-1 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <div className="mt-3 text-xs font-medium" style={{ color: '#2AABEE' }}>
-                  לעדכון בטלגראם ←
-                </div>
-              </div>
+        {error && (
+          <p className="text-center text-sm py-8" style={{ color: 'rgba(28,24,20,0.4)' }}>
+            לא ניתן לטעון עדכונים כרגע —{' '}
+            <a href="https://t.me/PodcastFinance" target="_blank" rel="noopener noreferrer" style={{ color: '#2AABEE' }}>
+              עברו לטלגראם ישירות
             </a>
-          ))}
-        </div>
+          </p>
+        )}
 
-        {/* Load More */}
+        {!loading && !error && posts.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {posts.map((p, i) => (
+              <PostCard key={i} p={p} />
+            ))}
+          </div>
+        )}
+
         <div className="text-center mt-10">
           <a
             href="https://t.me/PodcastFinance"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold text-white transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold text-white transition-all hover:opacity-90"
             style={{ background: '#2AABEE' }}
           >
             לכל העדכונים בטלגראם ←
