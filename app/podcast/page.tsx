@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from 'react'
 
+// fallback — נראה תמיד גם אם הפונקציה נכשלת
+const FALLBACK_VIDEOS = [
+  { videoId: 'iDfsKlitOCw', title: 'קרן העושר — מאחורי המספרים של הדוח השנתי 2025', text: 'הקרן לאזרחי ישראל סיימה את שנת 2025 עם תשואה דולרית של כמעט 20%. שיחה עם לנה קרופלניק.', dateISO: '2026-04-30', site: 'פיננסים YouTube' },
+  { videoId: 'PR4Y9KGQl5o', title: 'דברי נגיד בנק ישראל — פרופ׳ אמיר ירון', text: 'הרצאה בכנס מכון אהרן 2026 — אתגרי הגרעון והצמיחה לכלכלת ישראל.', dateISO: '2026-04-25', site: 'פיננסים YouTube' },
+].map(v => ({ ...v, url: `https://www.youtube.com/watch?v=${v.videoId}`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }))
+
 interface Video {
   videoId?: string
   title?: string
@@ -110,11 +116,13 @@ export default function PodcastPage() {
     fetch('/.netlify/functions/youtube-feed?limit=20&_ts=' + Date.now())
       .then(r => r.json())
       .then(j => {
-        setVideos(j.items || [])
+        const items = j.items || []
+        setVideos(items.length > 0 ? items : FALLBACK_VIDEOS)
         setLoading(false)
       })
       .catch(() => {
-        setError(true)
+        setVideos(FALLBACK_VIDEOS)
+        setError(false)
         setLoading(false)
       })
   }, [])
