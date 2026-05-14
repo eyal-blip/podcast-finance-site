@@ -8,10 +8,13 @@
   --gold: #C9A84C;
   --gold-light: #E2C97E;
   --gold-dark: #A07830;
-  --dark-bg: #0F0F0F;
-  --dark-card: #1A1A1A;
-  --dark-border: #2A2A2A;
-  --cream: #F5F0E8;
+  --ivory: #F8F3E8;
+  --ivory-dark: #EDE5D0;
+  --ivory-card: #FFFFFF;
+  --text-primary: #1C1814;
+  --text-secondary: #5A4F3F;
+  --text-muted: #8C7B65;
+  --border: #DDD5C0;
 }
 
 * {
@@ -25,8 +28,8 @@ html {
 
 body {
   font-family: 'Heebo', Arial, sans-serif;
-  background-color: #0F0F0F;
-  color: #F5F0E8;
+  background-color: #F8F3E8;
+  color: #1C1814;
   direction: rtl;
   overflow-x: hidden;
 }
@@ -37,55 +40,73 @@ body {
     background-image: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
   }
 
-  .gold-border {
-    border-color: var(--gold);
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-2 text-[#1C1814];
   }
 
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-2;
-    background: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
+  .section-title-gold {
+    background: linear-gradient(135deg, #A07830 0%, #C9A84C 50%, #8B6914 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    @apply text-3xl md:text-4xl font-bold mb-2;
   }
 
   .section-subtitle {
-    @apply text-gray-400 text-lg mb-10;
+    @apply text-[#5A4F3F] text-lg mb-10;
   }
 
-  .card-dark {
-    @apply bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl;
+  .card-ivory {
+    @apply bg-white border border-[#DDD5C0] rounded-xl shadow-sm;
+  }
+
+  .card-ivory-warm {
+    background: #FFFDF7;
+    @apply border border-[#DDD5C0] rounded-xl;
   }
 
   .btn-gold {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-[#0F0F0F] transition-all duration-200;
-    background: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white transition-all duration-200;
+    background: linear-gradient(135deg, #A07830 0%, #C9A84C 50%, #8B6914 100%);
   }
 
   .btn-gold:hover {
-    @apply scale-105 shadow-lg;
-    box-shadow: 0 8px 25px rgba(201, 168, 76, 0.35);
+    @apply scale-105;
+    box-shadow: 0 8px 25px rgba(160, 120, 48, 0.35);
   }
 
   .btn-outline-gold {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 border;
-    border-color: var(--gold);
-    color: var(--gold);
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 border-2;
+    border-color: #C9A84C;
+    color: #A07830;
+    background: transparent;
   }
 
   .btn-outline-gold:hover {
-    background: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
-    @apply text-[#0F0F0F] scale-105;
+    background: linear-gradient(135deg, #A07830 0%, #C9A84C 50%, #8B6914 100%);
+    @apply text-white scale-105 border-transparent;
   }
 
   .gold-divider {
-    @apply w-16 h-0.5 mx-auto mb-4;
+    @apply w-16 h-0.5 mx-auto mb-6;
     background: linear-gradient(90deg, transparent, #C9A84C, transparent);
   }
 
   .gold-divider-right {
-    @apply w-16 h-0.5 mb-4;
+    @apply w-16 h-0.5 mb-6;
     background: linear-gradient(90deg, #C9A84C, transparent);
+  }
+
+  .section-bg-ivory {
+    background-color: #F8F3E8;
+  }
+
+  .section-bg-white {
+    background-color: #FFFFFF;
+  }
+
+  .section-bg-warm {
+    background: #EDE5D0;
   }
 }
 
@@ -94,7 +115,7 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0F0F0F;
+  background: #EDE5D0;
 }
 ::-webkit-scrollbar-thumb {
   background: #C9A84C;
@@ -103,6 +124,6 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(201, 168, 76, 0.3);
-  color: #F5F0E8;
+  background: rgba(201, 168, 76, 0.25);
+  color: #1C1814;
 }

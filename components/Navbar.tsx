@@ -2,20 +2,22 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const navLinks = [
-  { href: '#podcast', label: 'פודקאסט' },
-  { href: '#articles', label: 'מאמרים' },
-  { href: '#posts', label: 'פוסטים' },
-  { href: '#magazine', label: 'מגזין' },
-  { href: '#telegram', label: 'טלגראם' },
-  { href: '#about', label: 'אודות' },
-  { href: '#contact', label: 'צור קשר' },
+  { href: '/podcast', label: 'פודקאסט YouTube' },
+  { href: '/telegram', label: 'ערוץ טלגראם' },
+  { href: '/articles', label: 'מאמרים' },
+  { href: '/posts', label: 'פוסטים' },
+  { href: '/magazine', label: 'מגזין' },
+  { href: '/about', label: 'אודות' },
+  { href: '/contact', label: 'צור קשר' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -27,33 +29,40 @@ export default function Navbar() {
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0F0F0F]/95 backdrop-blur-md border-b border-[#2A2A2A] shadow-xl'
-          : 'bg-transparent'
+          ? 'bg-[#F8F3E8]/95 backdrop-blur-md border-b border-[#DDD5C0] shadow-sm'
+          : 'bg-[#F8F3E8]/90 backdrop-blur-sm border-b border-[#DDD5C0]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-full border-2 flex items-center justify-center" style={{ borderColor: '#C9A84C' }}>
-              <span className="text-xs font-bold" style={{ color: '#C9A84C' }}>PF</span>
+            <div
+              className="w-9 h-9 rounded-full border-2 flex items-center justify-center"
+              style={{ borderColor: '#C9A84C', background: 'rgba(201,168,76,0.08)' }}
+            >
+              <span className="text-xs font-bold" style={{ color: '#A07830' }}>PF</span>
             </div>
             <div className="leading-tight">
-              <div className="text-sm font-bold text-white">פודקאסט פיננסים</div>
-              <div className="text-xs" style={{ color: '#C9A84C' }}>podcast.finance</div>
+              <div className="text-sm font-bold text-[#1C1814]">פודקאסט פיננסים</div>
+              <div className="text-xs font-medium" style={{ color: '#C9A84C' }}>podcast.finance</div>
             </div>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-md transition-colors duration-150 hover:bg-white/5"
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-150 ${
+                  pathname === link.href
+                    ? 'text-[#A07830] bg-[#C9A84C]/10'
+                    : 'text-[#5A4F3F] hover:text-[#1C1814] hover:bg-[#C9A84C]/08'
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -64,21 +73,18 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium transition-colors duration-150"
-              style={{ color: '#C9A84C' }}
+              style={{ color: '#A07830' }}
             >
               ← הצטרף לטלגראם
             </a>
-            <a
-              href="#contact"
-              className="btn-gold text-sm px-4 py-2"
-            >
+            <Link href="/contact" className="btn-gold text-sm px-4 py-2">
               פגישת ייעוץ
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-md text-gray-400 hover:text-white"
+            className="lg:hidden p-2 rounded-md text-[#5A4F3F] hover:text-[#1C1814]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="תפריט"
           >
@@ -95,31 +101,33 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[#141414] border-t border-[#2A2A2A]">
+        <div className="lg:hidden bg-[#F8F3E8] border-t border-[#DDD5C0]">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-md"
+                className={`block px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  pathname === link.href ? 'text-[#A07830] bg-[#C9A84C]/10' : 'text-[#5A4F3F]'
+                }`}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <div className="pt-3 border-t border-[#2A2A2A] mt-3 flex flex-col gap-2">
+            <div className="pt-3 border-t border-[#DDD5C0] mt-3 flex flex-col gap-2">
               <a
                 href="https://t.me/PodcastFinance"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block px-3 py-2 text-sm font-medium text-center rounded-md border"
-                style={{ color: '#C9A84C', borderColor: '#C9A84C' }}
+                className="block px-3 py-2 text-sm font-medium text-center rounded-md border-2"
+                style={{ color: '#A07830', borderColor: '#C9A84C' }}
               >
                 הצטרף לטלגראם
               </a>
-              <a href="#contact" className="btn-gold text-sm text-center" onClick={() => setMobileOpen(false)}>
+              <Link href="/contact" className="btn-gold text-sm text-center" onClick={() => setMobileOpen(false)}>
                 פגישת ייעוץ
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -17,11 +17,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="he" dir="rtl">
       <head>
@@ -32,9 +28,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#0F0F0F] text-[#F5F0E8] font-sans antialiased">
+      <body className="bg-[#F8F3E8] text-[#1C1814] font-sans antialiased">
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-16 md:pt-20">{children}</main>
         <Footer />
       </body>
     </html>

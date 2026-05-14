@@ -1,18 +1,18 @@
 import Link from 'next/link'
 
 const footerLinks = [
-  { href: '#podcast', label: 'פודקאסט' },
-  { href: '#articles', label: 'מאמרים עדכניים' },
-  { href: '#posts', label: 'פוסטים' },
-  { href: '#magazine', label: 'מגזין הבנקאות הפרטית' },
-  { href: '#telegram', label: 'ערוץ טלגראם' },
-  { href: '#about', label: 'אודות' },
-  { href: '#contact', label: 'צור קשר' },
+  { href: '/podcast', label: 'פודקאסט YouTube' },
+  { href: '/telegram', label: 'ערוץ טלגראם' },
+  { href: '/articles', label: 'מאמרים עדכניים' },
+  { href: '/posts', label: 'פוסטים' },
+  { href: '/magazine', label: 'מגזין הבנקאות הפרטית' },
+  { href: '/about', label: 'אודות' },
+  { href: '/contact', label: 'צור קשר' },
 ]
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A0A0A] border-t border-[#2A2A2A] pt-16 pb-8">
+    <footer className="bg-[#1C1814] text-[#F8F3E8] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -26,12 +26,12 @@ export default function Footer() {
                 <div className="text-xs" style={{ color: '#C9A84C' }}>podcast.finance</div>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-[#B0A090] text-sm leading-relaxed mb-4">
               ידע פיננסי מקצועי ועדכני לקוחות הבנקאות הפרטית של כל הבנקים — פודקאסטים, מאמרים, ומגזין רבעוני.
             </p>
-            <p className="text-xs text-gray-600">
+            <p className="text-xs text-[#7A6A5A]">
               בשיתוף{' '}
-              <a href="https://nihulhon.co.il" target="_blank" rel="noopener noreferrer" className="hover:text-gold-DEFAULT transition-colors" style={{ color: '#C9A84C' }}>
+              <a href="https://nihulhon.co.il" target="_blank" rel="noopener noreferrer" style={{ color: '#C9A84C' }} className="hover:opacity-80 transition-opacity">
                 פיננסים ניהול הון פרטי בע״מ
               </a>
             </p>
@@ -39,18 +39,15 @@ export default function Footer() {
 
           {/* Nav */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider" style={{ color: '#C9A84C' }}>
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider" style={{ color: '#C9A84C' }}>
               ניווט מהיר
             </h3>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white text-sm transition-colors duration-150"
-                  >
+                  <Link href={link.href} className="text-[#B0A090] hover:text-white text-sm transition-colors duration-150">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -58,49 +55,24 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider" style={{ color: '#C9A84C' }}>
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider" style={{ color: '#C9A84C' }}>
               פרטי קשר
             </h3>
             <ul className="space-y-3 text-sm">
-              <li>
-                <a href="tel:0777783000" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                  <span style={{ color: '#C9A84C' }}>☎</span> 07777-83000
-                </a>
-              </li>
-              <li>
-                <a href="https://wa.me/9720505938770" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                  <span style={{ color: '#C9A84C' }}>💬</span> 050-5938770
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@nihulhon.co.il" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                  <span style={{ color: '#C9A84C' }}>✉</span> info@nihulhon.co.il
-                </a>
-              </li>
-              <li>
-                <a href="https://t.me/PodcastFinance" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                  <span style={{ color: '#C9A84C' }}>✈</span> ערוץ טלגראם
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/privatebankingcenter" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                  <span style={{ color: '#C9A84C' }}>f</span> Facebook
-                </a>
-              </li>
-              <li className="text-gray-500 flex items-center gap-2">
-                <span style={{ color: '#C9A84C' }}>📍</span> היסמין 1, רמת אפעל, רמת גן
-              </li>
+              <li><a href="tel:0777783000" className="text-[#B0A090] hover:text-white transition-colors flex items-center gap-2"><span style={{ color: '#C9A84C' }}>☎</span> 07777-83000</a></li>
+              <li><a href="https://wa.me/9720505938770" target="_blank" rel="noopener noreferrer" className="text-[#B0A090] hover:text-white transition-colors flex items-center gap-2"><span style={{ color: '#C9A84C' }}>💬</span> 050-5938770</a></li>
+              <li><a href="mailto:info@nihulhon.co.il" className="text-[#B0A090] hover:text-white transition-colors flex items-center gap-2"><span style={{ color: '#C9A84C' }}>✉</span> info@nihulhon.co.il</a></li>
+              <li><a href="https://t.me/PodcastFinance" target="_blank" rel="noopener noreferrer" className="text-[#B0A090] hover:text-white transition-colors flex items-center gap-2"><span style={{ color: '#C9A84C' }}>✈</span> ערוץ טלגראם</a></li>
+              <li><a href="https://www.facebook.com/privatebankingcenter" target="_blank" rel="noopener noreferrer" className="text-[#B0A090] hover:text-white transition-colors flex items-center gap-2"><span style={{ color: '#C9A84C' }}>f</span> Facebook</a></li>
+              <li className="text-[#7A6A5A] flex items-center gap-2"><span style={{ color: '#C9A84C' }}>📍</span> היסמין 1, רמת אפעל, רמת גן</li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-[#2A2A2A] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+        <div className="border-t border-[#3A3028] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#7A6A5A]">
           <p>© 2026 פיננסים ניהול הון פרטי בע״מ | כל הזכויות שמורות</p>
           <div className="flex gap-4">
-            <a href="https://nihulhon.co.il/policy" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">
-              מדיניות פרטיות
-            </a>
+            <a href="https://nihulhon.co.il/policy" target="_blank" rel="noopener noreferrer" className="hover:text-[#B0A090] transition-colors">מדיניות פרטיות</a>
             <span>|</span>
             <span>רישיון ייעוץ השקעות ורישיון ייעוץ פנסיוני</span>
           </div>

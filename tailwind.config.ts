@@ -15,20 +15,23 @@ const config: Config = {
           dark: '#A07830',
           muted: '#8B6914',
         },
-        cream: '#F5F0E8',
-        dark: {
-          DEFAULT: '#0F0F0F',
-          card: '#1A1A1A',
-          border: '#2A2A2A',
-          elevated: '#222222',
+        ivory: {
+          DEFAULT: '#F8F3E8',
+          dark: '#EDE5D0',
+          card: '#FFFFFF',
+        },
+        text: {
+          primary: '#1C1814',
+          secondary: '#5A4F3F',
+          muted: '#8C7B65',
+        },
+        border: {
+          DEFAULT: '#DDD5C0',
+          light: '#EDE5D0',
         },
       },
       fontFamily: {
-        sans: ['var(--font-heebo)', 'Heebo', 'Arial', 'sans-serif'],
-      },
-      backgroundImage: {
-        'gold-gradient': 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%)',
-        'dark-gradient': 'linear-gradient(180deg, #0F0F0F 0%, #1A1A1A 100%)',
+        sans: ['Heebo', 'Arial', 'sans-serif'],
       },
     },
   },
