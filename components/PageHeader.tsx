@@ -7,20 +7,20 @@ interface PageHeaderProps {
 export function PageHeader({ title, subtitle, children }: PageHeaderProps) {
   return (
     <div className="bg-[#1E3651] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex items-center gap-8">
-        {/* Logo — ראשון ב-DOM = ימין ב-RTL */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 flex flex-col md:flex-row items-center gap-4 md:gap-8">
+        {/* Logo — מובייל: למעלה ובמרכז | דסקטופ: ימין */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/logo.png"
           alt="פיננסים — ניהול הון פרטי"
-          className="h-24 md:h-32 w-auto object-contain flex-shrink-0 rounded-2xl"
+          className="h-20 md:h-32 w-auto object-contain flex-shrink-0 rounded-2xl"
         />
-        {/* כותרת + תוכן — ממורכז בחלל השמאלי, טקסט מיושר ימין */}
-        <div className="flex-1 flex items-center justify-center">
-          <div className="flex flex-col gap-3">
-            <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">{title}</h1>
-            {subtitle && <p className="text-[#8A95A8] text-sm leading-relaxed">{subtitle}</p>}
-            {children}
+        {/* כותרת — מובייל: מרכז | דסקטופ: ממורכז בחלל השמאלי, מיושר ימין */}
+        <div className="flex-1 flex items-center justify-center text-center md:text-right">
+          <div className="flex flex-col gap-2 md:gap-3">
+            <h1 className="text-2xl md:text-4xl font-black text-white leading-tight">{title}</h1>
+            {subtitle && <p className="text-[#8A95A8] text-xs md:text-sm leading-relaxed">{subtitle}</p>}
+            {children && <div className="flex justify-center md:justify-start">{children}</div>}
           </div>
         </div>
       </div>

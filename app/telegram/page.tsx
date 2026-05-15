@@ -129,7 +129,7 @@ export default function TelegramPage() {
       {/* Feed */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {loading && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {Array(6).fill(null).map((_, i) => (
               <div key={i} className="animate-pulse bg-white h-52" style={{ border: '1px solid #DDD5C0' }} />
             ))}
@@ -146,7 +146,7 @@ export default function TelegramPage() {
         )}
 
         {!loading && !error && posts.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {posts.map((p, i) => (
               <PostCard key={i} p={p} />
             ))}

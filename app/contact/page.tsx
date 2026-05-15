@@ -12,7 +12,7 @@ export default function ContactPage() {
       <PageHeader title="פגישת ייעוץ" subtitle="ראשונית ללא התחייבות — במשרדנו ברמת אפעל, רמת גן" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-4 md:gap-8">
           {/* Contact Options */}
           <div className="space-y-5">
             <h2 className="text-xl font-bold text-[#1E3651] mb-6">דרכי יצירת קשר</h2>

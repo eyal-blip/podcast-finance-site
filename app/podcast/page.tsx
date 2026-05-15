@@ -148,7 +148,7 @@ export default function PodcastPage() {
       {/* Feed */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {loading && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {Array(6).fill(null).map((_, i) => (
               <div
                 key={i}
@@ -174,7 +174,7 @@ export default function PodcastPage() {
         )}
 
         {!loading && !error && videos.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {videos.map((v, i) => (
               <VideoCard key={v.videoId || i} v={v} />
             ))}

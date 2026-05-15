@@ -24,7 +24,7 @@ export default function ArticlesPage() {
     <div className="min-h-screen bg-[#F8F3E8]">
       <PageHeader title="מאמרים עדכניים" subtitle='תכנים נבחרים מגופי המחקר ומדיה הפיננסיים המובילים — רשות ני"ע, כנסת, אוצר ועוד' />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {articles.map((a) => (
             <a key={a.href} href={a.href} target="_blank" rel="noopener noreferrer"
               className="card-ivory rounded-xl group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 p-6 flex flex-col">

@@ -73,24 +73,24 @@ export default function HomePage() {
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex items-center gap-8">
-          {/* Logo — ימין ב-RTL */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10 flex flex-col md:flex-row items-center gap-4 md:gap-8">
+          {/* Logo — מובייל: למעלה | דסקטופ: ימין */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo.png"
             alt="פיננסים — ניהול הון פרטי"
-            className="h-24 md:h-32 w-auto object-contain flex-shrink-0 rounded-2xl"
+            className="h-20 md:h-32 w-auto object-contain flex-shrink-0 rounded-2xl"
           />
-          {/* Content — ממורכז בחלל השמאלי */}
-          <div className="flex-1 flex items-center justify-center">
-            <div className="flex flex-col gap-4">
-              <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">
+          {/* Content */}
+          <div className="flex-1 flex items-center justify-center text-center md:text-right">
+            <div className="flex flex-col gap-3">
+              <h1 className="text-2xl md:text-4xl font-black text-white leading-tight">
                 פודקאסט פיננסים
               </h1>
-              <p className="text-[#8A95A8] text-sm leading-relaxed max-w-lg">
+              <p className="text-[#8A95A8] text-xs md:text-sm leading-relaxed max-w-lg">
                 תכנים פיננסיים מקצועיים ללקוחות הבנקאות הפרטית של כל הבנקים
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                 <Link href="/podcast" className="btn-gold text-sm px-5 py-2.5 justify-center">
                   <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                   לפודקאסט
@@ -111,7 +111,7 @@ export default function HomePage() {
             <h2 className="text-3xl font-bold text-[#1E3651] mb-3">כל מה שיש באתר</h2>
             <div className="gold-divider" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
             {sections.map((sec) => (
               <Link
                 key={sec.href}
