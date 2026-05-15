@@ -30,7 +30,7 @@ export default function TelegramSection() {
           <div>
             <div
               className="inline-block text-xs font-semibold tracking-widest uppercase mb-3 px-3 py-1 rounded"
-              style={{ color: '#C9A84C', background: 'rgba(201,168,76,0.1)' }}
+              style={{ color: '#868C95', background: 'rgba(134,140,149,0.1)' }}
             >
               ✈ ערוץ טלגראם
             </div>
@@ -48,7 +48,7 @@ export default function TelegramSection() {
                 'ניוזלטרים חודשיים',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-gray-300">
-                  <span style={{ color: '#C9A84C' }} className="text-lg">◈</span>
+                  <span style={{ color: '#868C95' }} className="text-lg">◈</span>
                   {item}
                 </li>
               ))}
@@ -77,15 +77,15 @@ export default function TelegramSection() {
                 {/* Telegram icon */}
                 <div
                   className="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5"
-                  style={{ background: 'rgba(201,168,76,0.15)' }}
+                  style={{ background: 'rgba(134,140,149,0.15)' }}
                 >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#C9A84C">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#868C95">
                     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.793 13.4l-2.963-.924c-.644-.204-.657-.644.136-.953l11.57-4.461c.537-.194 1.006.131.834.953l-.476-.794z" />
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-semibold" style={{ color: '#C9A84C' }}>
+                    <span className="text-xs font-semibold" style={{ color: '#868C95' }}>
                       PodcastFinance
                     </span>
                     <span className="text-xs text-gray-600">{update.date}</span>
@@ -94,7 +94,7 @@ export default function TelegramSection() {
                   <div className="mt-2">
                     <span
                       className="text-xs px-1.5 py-0.5 rounded"
-                      style={{ background: 'rgba(201,168,76,0.1)', color: '#C9A84C' }}
+                      style={{ background: 'rgba(134,140,149,0.1)', color: '#868C95' }}
                     >
                       {update.type}
                     </span>
@@ -107,7 +107,7 @@ export default function TelegramSection() {
               href="https://t.me/PodcastFinance"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center text-sm py-3 rounded-xl border border-dashed transition-colors hover:border-[#C9A84C]/60"
+              className="block text-center text-sm py-3 rounded-xl border border-dashed transition-colors hover:border-[#868C95]/60"
               style={{ borderColor: '#2A2A2A', color: '#666' }}
             >
               לכל העדכונים בטלגראם ←

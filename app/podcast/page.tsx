@@ -59,18 +59,18 @@ function VideoCard({ v }: { v: Video }) {
       <div className="p-4 flex flex-col flex-1 gap-2">
         {/* Source + date */}
         <div className="flex items-center justify-between text-xs">
-          <span className="font-medium truncate max-w-[60%]" style={{ color: '#C9A84C' }}>
+          <span className="font-medium truncate max-w-[60%]" style={{ color: '#868C95' }}>
             {v.site || 'פיננסים YouTube'}
           </span>
           {date && <time style={{ color: 'rgba(28,24,20,0.4)' }}>{date}</time>}
         </div>
 
         {/* Divider */}
-        <div className="h-px" style={{ background: 'rgba(201,168,76,0.2)' }} />
+        <div className="h-px" style={{ background: 'rgba(134,140,149,0.2)' }} />
 
         {/* Title */}
         {v.title && (
-          <h3 className="font-bold text-sm leading-snug" style={{ color: '#1C1814' }}>
+          <h3 className="font-bold text-sm leading-snug" style={{ color: '#1E3651' }}>
             <a
               href={url}
               target="_blank"
@@ -98,7 +98,7 @@ function VideoCard({ v }: { v: Video }) {
           target="_blank"
           rel="noopener noreferrer"
           className="mt-auto self-start text-xs tracking-widest pb-0.5 transition-colors"
-          style={{ color: '#C9A84C', borderBottom: '1px solid rgba(201,168,76,0.3)' }}
+          style={{ color: '#868C95', borderBottom: '1px solid rgba(134,140,149,0.3)' }}
         >
           לצפייה ביוטיוב ←
         </a>
@@ -130,13 +130,13 @@ export default function PodcastPage() {
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
       {/* Header */}
-      <div className="bg-[#1C1814] text-white py-16">
+      <div className="bg-[#1E3651] text-white py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs tracking-widest mb-4 uppercase" style={{ color: '#C9A84C' }}>
+          <p className="text-xs tracking-widest mb-4 uppercase" style={{ color: '#868C95' }}>
             ערוץ YouTube
           </p>
           <h1 className="text-4xl md:text-5xl font-black mb-4">פודקאסט פיננסים</h1>
-          <div className="w-12 h-px mx-auto mb-6" style={{ background: '#C9A84C' }} />
+          <div className="w-12 h-px mx-auto mb-6" style={{ background: '#868C95' }} />
           <p className="text-[#B0A090] text-sm max-w-xl mx-auto leading-relaxed mb-6">
             סקירות שווקים, ניתוחי השקעות ותובנות פיננסיות — זמינים לצפייה ולהאזנה
           </p>
@@ -145,7 +145,7 @@ export default function PodcastPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold transition-all hover:opacity-90"
-            style={{ background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 100%)', color: '#1C1814' }}
+            style={{ background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 100%)', color: '#1E3651' }}
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -176,7 +176,7 @@ export default function PodcastPage() {
               href="https://www.youtube.com/@financeinst"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#C9A84C' }}
+              style={{ color: '#868C95' }}
             >
               עברו לערוץ ישירות
             </a>
@@ -197,7 +197,7 @@ export default function PodcastPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold transition-all hover:opacity-90"
-            style={{ background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 100%)', color: '#1C1814' }}
+            style={{ background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 100%)', color: '#1E3651' }}
           >
             לכל הסרטונים בערוץ YouTube ←
           </a>

@@ -7,7 +7,7 @@ export default function HeroSection() {
         className="absolute inset-0 opacity-20"
         style={{
           backgroundImage:
-            'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.35) 0%, transparent 70%)',
+            'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(134,140,149,0.35) 0%, transparent 70%)',
         }}
       />
       {/* Subtle grid */}
@@ -15,15 +15,15 @@ export default function HeroSection() {
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(201,168,76,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.5) 1px, transparent 1px)',
+            'linear-gradient(rgba(134,140,149,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(134,140,149,0.5) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32 pt-40">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8 text-sm font-medium" style={{ borderColor: 'rgba(201,168,76,0.4)', color: '#C9A84C', background: 'rgba(201,168,76,0.08)' }}>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8 text-sm font-medium" style={{ borderColor: 'rgba(134,140,149,0.4)', color: '#868C95', background: 'rgba(134,140,149,0.08)' }}>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#868C95] animate-pulse" />
           ידע פיננסי לבנקאות הפרטית
         </div>
 
@@ -33,7 +33,7 @@ export default function HeroSection() {
           <span
             className="block"
             style={{
-              background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%)',
+              background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 50%, #6A7280 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -72,7 +72,7 @@ export default function HeroSection() {
               <div
                 className="text-2xl font-black mb-1"
                 style={{
-                  background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 100%)',
+                  background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',

@@ -35,7 +35,7 @@ export default function AboutSection() {
         <div className="text-center mb-16">
           <div
             className="inline-block text-xs font-semibold tracking-widest uppercase mb-3 px-3 py-1 rounded"
-            style={{ color: '#C9A84C', background: 'rgba(201,168,76,0.1)' }}
+            style={{ color: '#868C95', background: 'rgba(134,140,149,0.1)' }}
           >
             ◇ אודות
           </div>
@@ -59,11 +59,11 @@ export default function AboutSection() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="card-dark rounded-xl p-6 text-center hover:border-[#C9A84C]/40 transition-all duration-200"
+              className="card-dark rounded-xl p-6 text-center hover:border-[#868C95]/40 transition-all duration-200"
             >
               <div
                 className="text-3xl mb-4"
-                style={{ color: '#C9A84C' }}
+                style={{ color: '#868C95' }}
               >
                 {service.icon}
               </div>
@@ -79,10 +79,10 @@ export default function AboutSection() {
             <div
               key={value.title}
               className="rounded-xl p-6"
-              style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.15)' }}
+              style={{ background: 'rgba(134,140,149,0.05)', border: '1px solid rgba(134,140,149,0.15)' }}
             >
               <h3 className="font-bold text-white mb-3 flex items-center gap-2">
-                <span style={{ color: '#C9A84C' }}>◈</span>
+                <span style={{ color: '#868C95' }}>◈</span>
                 {value.title}
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed">{value.text}</p>

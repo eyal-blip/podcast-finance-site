@@ -51,7 +51,7 @@ export default function PostsSection() {
         <div className="text-center mb-16">
           <div
             className="inline-block text-xs font-semibold tracking-widest uppercase mb-3 px-3 py-1 rounded"
-            style={{ color: '#C9A84C', background: 'rgba(201,168,76,0.1)' }}
+            style={{ color: '#868C95', background: 'rgba(134,140,149,0.1)' }}
           >
             ◈ תוכן מקצועי
           </div>
@@ -65,26 +65,26 @@ export default function PostsSection() {
           href={posts[0].href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block card-dark rounded-2xl p-8 mb-8 hover:border-[#C9A84C]/40 transition-all duration-200"
+          className="group block card-dark rounded-2xl p-8 mb-8 hover:border-[#868C95]/40 transition-all duration-200"
         >
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-3">
                 <span
                   className="text-xs px-2 py-0.5 rounded font-medium"
-                  style={{ background: 'rgba(201,168,76,0.15)', color: '#C9A84C' }}
+                  style={{ background: 'rgba(134,140,149,0.15)', color: '#868C95' }}
                 >
                   פוסט מומלץ
                 </span>
                 <span className="text-xs text-gray-600">{posts[0].date}</span>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#E2C97E] transition-colors leading-snug">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#A8AEB8] transition-colors leading-snug">
                 {posts[0].title}
               </h3>
               <p className="text-gray-400 leading-relaxed mb-4">{posts[0].excerpt}</p>
               <div className="flex items-center gap-4">
                 <span className="text-sm text-gray-500">מאת {posts[0].author}</span>
-                <span className="text-sm font-medium" style={{ color: '#C9A84C' }}>
+                <span className="text-sm font-medium" style={{ color: '#868C95' }}>
                   להמשך הפוסט ←
                 </span>
               </div>
@@ -92,7 +92,7 @@ export default function PostsSection() {
             <div className="hidden md:flex items-center justify-center w-40">
               <div
                 className="w-20 h-20 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)' }}
+                style={{ background: 'rgba(134,140,149,0.1)', border: '1px solid rgba(134,140,149,0.3)' }}
               >
                 <span className="text-3xl">◈</span>
               </div>
@@ -108,10 +108,10 @@ export default function PostsSection() {
               href={post.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="card-dark p-6 rounded-xl group hover:border-[#C9A84C]/40 transition-all duration-200 flex flex-col"
+              className="card-dark p-6 rounded-xl group hover:border-[#868C95]/40 transition-all duration-200 flex flex-col"
             >
               <div className="text-xs text-gray-600 mb-2">{post.date}</div>
-              <h3 className="font-semibold text-white mb-3 leading-snug group-hover:text-[#E2C97E] transition-colors line-clamp-2">
+              <h3 className="font-semibold text-white mb-3 leading-snug group-hover:text-[#A8AEB8] transition-colors line-clamp-2">
                 {post.title}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed flex-1 line-clamp-3 mb-4">
@@ -119,7 +119,7 @@ export default function PostsSection() {
               </p>
               <div className="flex items-center justify-between mt-auto">
                 <span className="text-xs text-gray-600">{post.author}</span>
-                <span className="text-xs font-medium" style={{ color: '#C9A84C' }}>
+                <span className="text-xs font-medium" style={{ color: '#868C95' }}>
                   קרא ←
                 </span>
               </div>

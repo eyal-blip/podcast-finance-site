@@ -52,18 +52,18 @@ function PostCard({ p }: { p: Post }) {
       <div className="p-4 flex flex-col flex-1 gap-2">
         {/* Source + date */}
         <div className="flex items-center justify-between text-xs">
-          <span className="font-medium truncate max-w-[60%]" style={{ color: '#C9A84C' }}>
+          <span className="font-medium truncate max-w-[60%]" style={{ color: '#868C95' }}>
             {p.site || 'PodcastFinance'}
           </span>
-          {date && <time className="text-[#1C1814]/40">{date}</time>}
+          {date && <time className="text-[#1E3651]/40">{date}</time>}
         </div>
 
         {/* Divider */}
-        <div className="h-px" style={{ background: 'rgba(201,168,76,0.2)' }} />
+        <div className="h-px" style={{ background: 'rgba(134,140,149,0.2)' }} />
 
         {/* Title */}
         {p.title && (
-          <h3 className="font-bold text-sm leading-snug" style={{ color: '#1C1814' }}>
+          <h3 className="font-bold text-sm leading-snug" style={{ color: '#1E3651' }}>
             <a href={url} target="_blank" rel="noopener noreferrer"
               className="hover:opacity-70 transition-opacity">
               {p.title}
@@ -81,7 +81,7 @@ function PostCard({ p }: { p: Post }) {
         {/* Link */}
         <a href={url} target="_blank" rel="noopener noreferrer"
           className="mt-auto self-start text-xs tracking-widest pb-0.5 transition-colors"
-          style={{ color: '#C9A84C', borderBottom: '1px solid rgba(201,168,76,0.3)' }}>
+          style={{ color: '#868C95', borderBottom: '1px solid rgba(134,140,149,0.3)' }}>
           {isYT ? 'לצפייה ביוטיוב ←' : 'לעדכון בטלגראם ←'}
         </a>
       </div>
@@ -111,7 +111,7 @@ export default function TelegramPage() {
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
       {/* Header */}
-      <div className="bg-[#1C1814] text-white py-16">
+      <div className="bg-[#1E3651] text-white py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-xs tracking-widest mb-4 uppercase" style={{ color: '#2AABEE' }}>
             ערוץ טלגראם

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const navLinks = [
@@ -36,17 +37,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div
-              className="w-9 h-9 rounded-full border-2 flex items-center justify-center"
-              style={{ borderColor: '#C9A84C', background: 'rgba(201,168,76,0.08)' }}
-            >
-              <span className="text-xs font-bold" style={{ color: '#A07830' }}>PF</span>
-            </div>
-            <div className="leading-tight">
-              <div className="text-sm font-bold text-[#1C1814]">פודקאסט פיננסים</div>
-              <div className="text-xs font-medium" style={{ color: '#C9A84C' }}>podcast.finance</div>
-            </div>
+          <Link href="/" className="flex items-center gap-2 group">
+            <Image
+              src="/logo.png"
+              alt="פודקאסט פיננסים"
+              width={160}
+              height={48}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -57,8 +56,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-150 ${
                   pathname === link.href
-                    ? 'text-[#A07830] bg-[#C9A84C]/10'
-                    : 'text-[#5A4F3F] hover:text-[#1C1814] hover:bg-[#C9A84C]/08'
+                    ? 'text-[#6A7280] bg-[#868C95]/10'
+                    : 'text-[#5A4F3F] hover:text-[#1E3651] hover:bg-[#868C95]/10'
                 }`}
               >
                 {link.label}
@@ -73,7 +72,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium transition-colors duration-150"
-              style={{ color: '#A07830' }}
+              style={{ color: '#6A7280' }}
             >
               ← הצטרף לטלגראם
             </a>
@@ -84,7 +83,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-md text-[#5A4F3F] hover:text-[#1C1814]"
+            className="lg:hidden p-2 rounded-md text-[#5A4F3F] hover:text-[#1E3651]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="תפריט"
           >
@@ -108,7 +107,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`block px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  pathname === link.href ? 'text-[#A07830] bg-[#C9A84C]/10' : 'text-[#5A4F3F]'
+                  pathname === link.href ? 'text-[#6A7280] bg-[#868C95]/10' : 'text-[#5A4F3F]'
                 }`}
                 onClick={() => setMobileOpen(false)}
               >
@@ -121,7 +120,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-3 py-2 text-sm font-medium text-center rounded-md border-2"
-                style={{ color: '#A07830', borderColor: '#C9A84C' }}
+                style={{ color: '#6A7280', borderColor: '#868C95' }}
               >
                 הצטרף לטלגראם
               </a>

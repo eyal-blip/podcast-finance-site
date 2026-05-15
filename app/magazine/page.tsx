@@ -9,13 +9,13 @@ export default function MagazinePage() {
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
       {/* Header */}
-      <div className="bg-[#1C1814] text-white py-16">
+      <div className="bg-[#1E3651] text-white py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs tracking-widest mb-4 uppercase" style={{ color: '#C9A84C' }}>
+          <p className="text-xs tracking-widest mb-4 uppercase" style={{ color: '#868C95' }}>
             בנקאות פרטית
           </p>
           <h1 className="text-4xl md:text-5xl font-black mb-4">מגזין הבנקאות הפרטית</h1>
-          <div className="w-12 h-px mx-auto mb-6" style={{ background: '#C9A84C' }} />
+          <div className="w-12 h-px mx-auto mb-6" style={{ background: '#868C95' }} />
           <p className="text-[#B0A090] text-sm max-w-xl mx-auto leading-relaxed">
             מגזין רבעוני המופץ ללקוחות הבנקאות הפרטית של כל הבנקים —
             תכנים פיננסיים אקטואליים, מדורי תרבות, פנאי ואיכות חיים.

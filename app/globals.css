@@ -5,13 +5,13 @@
 @tailwind utilities;
 
 :root {
-  --gold: #C9A84C;
-  --gold-light: #E2C97E;
-  --gold-dark: #A07830;
+  --gold: #868C95;
+  --gold-light: #A8AEB8;
+  --gold-dark: #6A7280;
   --ivory: #F8F3E8;
   --ivory-dark: #EDE5D0;
   --ivory-card: #FFFFFF;
-  --text-primary: #1C1814;
+  --text-primary: #1E3651;
   --text-secondary: #5A4F3F;
   --text-muted: #8C7B65;
   --border: #DDD5C0;
@@ -29,7 +29,7 @@ html {
 body {
   font-family: 'Heebo', Arial, sans-serif;
   background-color: #F8F3E8;
-  color: #1C1814;
+  color: #1E3651;
   direction: rtl;
   overflow-x: hidden;
 }
@@ -37,15 +37,15 @@ body {
 @layer components {
   .gold-text {
     @apply text-transparent bg-clip-text;
-    background-image: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
+    background-image: linear-gradient(135deg, #868C95 0%, #A8AEB8 50%, #6A7280 100%);
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-2 text-[#1C1814];
+    @apply text-3xl md:text-4xl font-bold mb-2 text-[#1E3651];
   }
 
   .section-title-gold {
-    background: linear-gradient(135deg, #A07830 0%, #C9A84C 50%, #8B6914 100%);
+    background: linear-gradient(135deg, #6A7280 0%, #868C95 50%, #5A6370 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -67,34 +67,34 @@ body {
 
   .btn-gold {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white transition-all duration-200;
-    background: linear-gradient(135deg, #A07830 0%, #C9A84C 50%, #8B6914 100%);
+    background: linear-gradient(135deg, #6A7280 0%, #868C95 50%, #5A6370 100%);
   }
 
   .btn-gold:hover {
     @apply scale-105;
-    box-shadow: 0 8px 25px rgba(160, 120, 48, 0.35);
+    box-shadow: 0 8px 25px rgba(106, 114, 128, 0.35);
   }
 
   .btn-outline-gold {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 border-2;
-    border-color: #C9A84C;
-    color: #A07830;
+    border-color: #868C95;
+    color: #6A7280;
     background: transparent;
   }
 
   .btn-outline-gold:hover {
-    background: linear-gradient(135deg, #A07830 0%, #C9A84C 50%, #8B6914 100%);
+    background: linear-gradient(135deg, #6A7280 0%, #868C95 50%, #5A6370 100%);
     @apply text-white scale-105 border-transparent;
   }
 
   .gold-divider {
     @apply w-16 h-0.5 mx-auto mb-6;
-    background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+    background: linear-gradient(90deg, transparent, #868C95, transparent);
   }
 
   .gold-divider-right {
     @apply w-16 h-0.5 mb-6;
-    background: linear-gradient(90deg, #C9A84C, transparent);
+    background: linear-gradient(90deg, #868C95, transparent);
   }
 
   .section-bg-ivory {
@@ -118,12 +118,12 @@ body {
   background: #EDE5D0;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C9A84C;
+  background: #868C95;
   border-radius: 3px;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(201, 168, 76, 0.25);
-  color: #1C1814;
+  background: rgba(134, 140, 149, 0.25);
+  color: #1E3651;
 }

@@ -51,7 +51,7 @@ const articles = [
 
 const tagColors: Record<string, string> = {
   'מדיניות': '#6B7C99',
-  'שוק הון': '#C9A84C',
+  'שוק הון': '#868C95',
   'השקעות': '#8B9E6B',
   'מאקרו': '#9B6BC9',
   'כלכלה': '#C9764C',
@@ -66,7 +66,7 @@ export default function ArticlesSection() {
         <div className="text-center mb-16">
           <div
             className="inline-block text-xs font-semibold tracking-widest uppercase mb-3 px-3 py-1 rounded"
-            style={{ color: '#C9A84C', background: 'rgba(201,168,76,0.1)' }}
+            style={{ color: '#868C95', background: 'rgba(134,140,149,0.1)' }}
           >
             ◉ עדכון שוטף
           </div>
@@ -83,14 +83,14 @@ export default function ArticlesSection() {
               href={article.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="card-dark p-6 rounded-xl group hover:border-[#C9A84C]/40 transition-all duration-200 flex flex-col"
+              className="card-dark p-6 rounded-xl group hover:border-[#868C95]/40 transition-all duration-200 flex flex-col"
             >
               <div className="flex items-center justify-between mb-3">
                 <span
                   className="text-xs px-2 py-0.5 rounded font-medium"
                   style={{
-                    background: `${tagColors[article.tag] || '#C9A84C'}20`,
-                    color: tagColors[article.tag] || '#C9A84C',
+                    background: `${tagColors[article.tag] || '#868C95'}20`,
+                    color: tagColors[article.tag] || '#868C95',
                   }}
                 >
                   {article.tag}
@@ -98,7 +98,7 @@ export default function ArticlesSection() {
                 <span className="text-xs text-gray-600">{article.date}</span>
               </div>
 
-              <h3 className="font-semibold text-white mb-3 leading-snug group-hover:text-[#E2C97E] transition-colors line-clamp-2">
+              <h3 className="font-semibold text-white mb-3 leading-snug group-hover:text-[#A8AEB8] transition-colors line-clamp-2">
                 {article.title}
               </h3>
 
@@ -108,7 +108,7 @@ export default function ArticlesSection() {
 
               <div className="flex items-center justify-between mt-auto">
                 <span className="text-xs text-gray-600">מקור: {article.source}</span>
-                <span className="text-xs font-medium transition-colors" style={{ color: '#C9A84C' }}>
+                <span className="text-xs font-medium transition-colors" style={{ color: '#868C95' }}>
                   לכתבה ←
                 </span>
               </div>

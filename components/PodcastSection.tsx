@@ -28,7 +28,7 @@ export default function PodcastSection() {
         <div className="text-center mb-16">
           <div
             className="inline-block text-xs font-semibold tracking-widest uppercase mb-3 px-3 py-1 rounded"
-            style={{ color: '#C9A84C', background: 'rgba(201,168,76,0.1)' }}
+            style={{ color: '#868C95', background: 'rgba(134,140,149,0.1)' }}
           >
             ◈ ערוץ הפודקאסט
           </div>
@@ -59,7 +59,7 @@ export default function PodcastSection() {
               href={`https://www.youtube.com/watch?v=${ep.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="card-dark p-5 rounded-xl group hover:border-[#C9A84C]/40 transition-all duration-200 flex flex-col"
+              className="card-dark p-5 rounded-xl group hover:border-[#868C95]/40 transition-all duration-200 flex flex-col"
             >
               {/* Thumbnail */}
               <div className="relative aspect-video rounded-lg overflow-hidden mb-4 bg-[#222]">
@@ -69,7 +69,7 @@ export default function PodcastSection() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-[#C9A84C]/90 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-[#868C95]/90 flex items-center justify-center">
                     <svg className="w-5 h-5 text-black mr-[-2px]" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
                     </svg>
@@ -77,8 +77,8 @@ export default function PodcastSection() {
                 </div>
               </div>
 
-              <div className="text-xs mb-2" style={{ color: '#C9A84C' }}>{ep.date}</div>
-              <h3 className="font-semibold text-white mb-2 leading-snug text-sm group-hover:text-[#E2C97E] transition-colors line-clamp-2">
+              <div className="text-xs mb-2" style={{ color: '#868C95' }}>{ep.date}</div>
+              <h3 className="font-semibold text-white mb-2 leading-snug text-sm group-hover:text-[#A8AEB8] transition-colors line-clamp-2">
                 {ep.title}
               </h3>
               <p className="text-gray-500 text-xs leading-relaxed flex-1 line-clamp-3">{ep.description}</p>

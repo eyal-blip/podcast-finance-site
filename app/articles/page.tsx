@@ -15,18 +15,18 @@ const articles = [
 ]
 
 const tagColors: Record<string, string> = {
-  'מדיניות': '#6B7C99', 'שוק הון': '#C9A84C', 'השקעות': '#5A8F3C', 'מאקרו': '#7B4FC9', 'כלכלה': '#C9764C', 'נדל״ן': '#2E7FC9',
+  'מדיניות': '#6B7C99', 'שוק הון': '#868C95', 'השקעות': '#5A8F3C', 'מאקרו': '#7B4FC9', 'כלכלה': '#C9764C', 'נדל״ן': '#2E7FC9',
 }
 
 export default function ArticlesPage() {
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
-      <div className="bg-[#1C1814] text-white py-16">
+      <div className="bg-[#1E3651] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 text-sm" style={{ borderColor: 'rgba(201,168,76,0.4)', color: '#E2C97E', background: 'rgba(201,168,76,0.08)' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 text-sm" style={{ borderColor: 'rgba(134,140,149,0.4)', color: '#A8AEB8', background: 'rgba(134,140,149,0.08)' }}>
             ◉ עדכון שוטף
           </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">מאמרים <span style={{ background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>עדכניים</span></h1>
+          <h1 className="text-4xl md:text-5xl font-black mb-4">מאמרים <span style={{ background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>עדכניים</span></h1>
           <p className="text-[#B0A090] max-w-xl mx-auto">תכנים נבחרים מגופי המחקר ומדיה הפיננסיים המובילים — רשות ני"ע, כנסת, אוצר ועוד</p>
         </div>
       </div>
@@ -39,11 +39,11 @@ export default function ArticlesPage() {
                 <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ background: `${tagColors[a.tag]}15`, color: tagColors[a.tag] }}>{a.tag}</span>
                 <span className="text-xs text-[#8C7B65]">{a.date}</span>
               </div>
-              <h3 className="font-semibold text-[#1C1814] mb-2 text-sm leading-snug group-hover:text-[#A07830] transition-colors line-clamp-2">{a.title}</h3>
+              <h3 className="font-semibold text-[#1E3651] mb-2 text-sm leading-snug group-hover:text-[#6A7280] transition-colors line-clamp-2">{a.title}</h3>
               <p className="text-[#8C7B65] text-xs leading-relaxed flex-1 line-clamp-3 mb-4">{a.excerpt}</p>
               <div className="flex items-center justify-between mt-auto">
                 <span className="text-xs text-[#5A4F3F]">מקור: {a.source}</span>
-                <span className="text-xs font-medium" style={{ color: '#C9A84C' }}>לכתבה ←</span>
+                <span className="text-xs font-medium" style={{ color: '#868C95' }}>לכתבה ←</span>
               </div>
             </a>
           ))}

@@ -23,7 +23,7 @@ export default function MagazineSection() {
         className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(ellipse 60% 40% at 80% 50%, rgba(201,168,76,0.8) 0%, transparent 70%)',
+            'radial-gradient(ellipse 60% 40% at 80% 50%, rgba(134,140,149,0.8) 0%, transparent 70%)',
         }}
       />
 
@@ -32,7 +32,7 @@ export default function MagazineSection() {
         <div className="text-center mb-16">
           <div
             className="inline-block text-xs font-semibold tracking-widest uppercase mb-3 px-3 py-1 rounded"
-            style={{ color: '#C9A84C', background: 'rgba(201,168,76,0.1)' }}
+            style={{ color: '#868C95', background: 'rgba(134,140,149,0.1)' }}
           >
             ◉ מגזין רבעוני
           </div>
@@ -57,7 +57,7 @@ export default function MagazineSection() {
                   <div
                     className="text-6xl font-black mb-2"
                     style={{
-                      background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%)',
+                      background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 50%, #6A7280 100%)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       backgroundClip: 'text',
@@ -68,14 +68,14 @@ export default function MagazineSection() {
                   <div className="text-lg text-gray-400 font-light tracking-widest">
                     הבנקאות הפרטית
                   </div>
-                  <div className="mt-4 text-xs" style={{ color: '#C9A84C' }}>
+                  <div className="mt-4 text-xs" style={{ color: '#868C95' }}>
                     גיליון ינואר 2026
                   </div>
                 </div>
               </div>
               <div
                 className="absolute top-4 right-4 px-2 py-1 text-xs font-semibold rounded"
-                style={{ background: 'rgba(201,168,76,0.2)', color: '#C9A84C' }}
+                style={{ background: 'rgba(134,140,149,0.2)', color: '#868C95' }}
               >
                 גיליון אחרון
               </div>
@@ -100,12 +100,12 @@ export default function MagazineSection() {
           <div
             className="rounded-2xl p-8 flex flex-col justify-between"
             style={{
-              background: 'linear-gradient(135deg, rgba(201,168,76,0.12) 0%, rgba(30,30,20,0.8) 100%)',
-              border: '1px solid rgba(201,168,76,0.3)',
+              background: 'linear-gradient(135deg, rgba(134,140,149,0.12) 0%, rgba(30,30,20,0.8) 100%)',
+              border: '1px solid rgba(134,140,149,0.3)',
             }}
           >
             <div>
-              <div className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: '#C9A84C' }}>
+              <div className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: '#868C95' }}>
                 מנוי חינם
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
@@ -119,7 +119,7 @@ export default function MagazineSection() {
                   'תכנים פיננסיים + תרבות ופנאי',
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-gray-300 text-sm">
-                    <span style={{ color: '#C9A84C' }}>◈</span>
+                    <span style={{ color: '#868C95' }}>◈</span>
                     {item}
                   </li>
                 ))}

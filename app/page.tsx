@@ -7,7 +7,7 @@ const sections = [
     title: 'פודקאסט YouTube',
     description: 'פרקים מקוריים של פודקאסט פיננסים — דיונים עם מומחים על שוקי הון, בנקאות פרטית וניהול הון.',
     badge: 'ערוץ @financeinst',
-    color: '#C9A84C',
+    color: '#868C95',
     bg: '#FFFBF0',
   },
   {
@@ -34,7 +34,7 @@ const sections = [
     title: 'פוסטים',
     description: '144+ פוסטים מקוריים של מומחי פיננסים ניהול הון פרטי — ניתוחים, סקירות ודעות.',
     badge: '144+ פוסטים',
-    color: '#C9A84C',
+    color: '#868C95',
     bg: '#FFFBF0',
   },
   {
@@ -61,31 +61,31 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1C1814] text-white">
+      <section className="relative overflow-hidden bg-[#1E3651] text-white">
         <div
           className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.5) 0%, transparent 70%)' }}
+          style={{ backgroundImage: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(134,140,149,0.5) 0%, transparent 70%)' }}
         />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: 'linear-gradient(rgba(201,168,76,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.8) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(134,140,149,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(134,140,149,0.8) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36 text-center">
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8 text-sm font-medium"
-            style={{ borderColor: 'rgba(201,168,76,0.4)', color: '#E2C97E', background: 'rgba(201,168,76,0.08)' }}
+            style={{ borderColor: 'rgba(134,140,149,0.4)', color: '#A8AEB8', background: 'rgba(134,140,149,0.08)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#868C95] animate-pulse" />
             ידע פיננסי לבנקאות הפרטית
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black mb-6 leading-tight">
             <span className="block text-white">פודקאסט</span>
             <span
               className="block"
-              style={{ background: 'linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
+              style={{ background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 50%, #6A7280 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
             >
               פיננסים
             </span>
@@ -98,7 +98,7 @@ export default function HomePage() {
               <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
               לפודקאסט
             </Link>
-            <Link href="/contact" className="btn-outline-gold text-base px-8 py-4 justify-center !border-[#C9A84C] !text-[#E2C97E] hover:!text-white">
+            <Link href="/contact" className="btn-outline-gold text-base px-8 py-4 justify-center !border-[#868C95] !text-[#A8AEB8] hover:!text-white">
               פגישת ייעוץ ←
             </Link>
           </div>
@@ -109,7 +109,7 @@ export default function HomePage() {
       <section className="py-20 bg-[#F8F3E8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-[#1C1814] mb-3">כל מה שיש באתר</h2>
+            <h2 className="text-3xl font-bold text-[#1E3651] mb-3">כל מה שיש באתר</h2>
             <div className="gold-divider" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -129,7 +129,7 @@ export default function HomePage() {
                     {sec.badge}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-[#1C1814] mb-2 group-hover:text-[#A07830] transition-colors">
+                <h3 className="text-lg font-bold text-[#1E3651] mb-2 group-hover:text-[#6A7280] transition-colors">
                   {sec.title}
                 </h3>
                 <p className="text-[#5A4F3F] text-sm leading-relaxed flex-1">{sec.description}</p>
@@ -155,7 +155,7 @@ export default function HomePage() {
               <div key={s.label}>
                 <div
                   className="text-4xl font-black mb-1"
-                  style={{ background: 'linear-gradient(135deg, #A07830 0%, #C9A84C 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
+                  style={{ background: 'linear-gradient(135deg, #6A7280 0%, #868C95 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
                 >
                   {s.value}
                 </div>
@@ -167,7 +167,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-16 bg-[#1C1814] text-center">
+      <section className="py-16 bg-[#1E3651] text-center">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-white mb-3">פגישת ייעוץ ראשונית ללא התחייבות</h2>
           <p className="text-[#B0A090] mb-8">יועץ השקעות בכיר ממתין לכם — במשרדנו ברמת אפעל, רמת גן</p>
@@ -179,7 +179,7 @@ export default function HomePage() {
               href="https://t.me/PodcastFinance"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-gold text-base px-8 py-4 justify-center !border-[#C9A84C] !text-[#E2C97E] hover:!text-white"
+              className="btn-outline-gold text-base px-8 py-4 justify-center !border-[#868C95] !text-[#A8AEB8] hover:!text-white"
             >
               הצטרף לטלגראם
             </a>
