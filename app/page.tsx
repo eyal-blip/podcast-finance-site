@@ -81,22 +81,24 @@ export default function HomePage() {
             alt="פיננסים — ניהול הון פרטי"
             className="h-24 md:h-32 w-auto object-contain flex-shrink-0 rounded-2xl"
           />
-          {/* Content — שמאל */}
-          <div className="flex-1 flex flex-col gap-4">
-            <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">
-              פודקאסט פיננסים
-            </h1>
-            <p className="text-[#B0A090] text-sm leading-relaxed max-w-lg">
-              תכנים פיננסיים מקצועיים ללקוחות הבנקאות הפרטית של כל הבנקים
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/podcast" className="btn-gold text-sm px-5 py-2.5 justify-center">
-                <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                לפודקאסט
-              </Link>
-              <Link href="/contact" className="btn-outline-gold text-sm px-5 py-2.5 justify-center !border-[#868C95] !text-[#A8AEB8] hover:!text-white">
-                פגישת ייעוץ ←
-              </Link>
+          {/* Content — ממורכז בחלל השמאלי */}
+          <div className="flex-1 flex items-center justify-center">
+            <div className="flex flex-col gap-4">
+              <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">
+                פודקאסט פיננסים
+              </h1>
+              <p className="text-[#B0A090] text-sm leading-relaxed max-w-lg">
+                תכנים פיננסיים מקצועיים ללקוחות הבנקאות הפרטית של כל הבנקים
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/podcast" className="btn-gold text-sm px-5 py-2.5 justify-center">
+                  <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  לפודקאסט
+                </Link>
+                <Link href="/contact" className="btn-outline-gold text-sm px-5 py-2.5 justify-center !border-[#868C95] !text-[#A8AEB8] hover:!text-white">
+                  פגישת ייעוץ ←
+                </Link>
+              </div>
             </div>
           </div>
         </div>

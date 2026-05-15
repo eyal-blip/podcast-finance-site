@@ -15,11 +15,13 @@ export function PageHeader({ title, subtitle, children }: PageHeaderProps) {
           alt="פיננסים — ניהול הון פרטי"
           className="h-24 md:h-32 w-auto object-contain flex-shrink-0 rounded-2xl"
         />
-        {/* כותרת + תוכן — שמאל */}
-        <div className="flex-1 flex flex-col gap-3">
-          <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">{title}</h1>
-          {subtitle && <p className="text-[#B0A090] text-sm leading-relaxed">{subtitle}</p>}
-          {children}
+        {/* כותרת + תוכן — ממורכז בחלל השמאלי, טקסט מיושר ימין */}
+        <div className="flex-1 flex items-center justify-center">
+          <div className="flex flex-col gap-3">
+            <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">{title}</h1>
+            {subtitle && <p className="text-[#B0A090] text-sm leading-relaxed">{subtitle}</p>}
+            {children}
+          </div>
         </div>
       </div>
     </div>
