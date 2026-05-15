@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
-      <PageHeader />
+      <PageHeader title="פגישת ייעוץ" subtitle="ראשונית ללא התחייבות — במשרדנו ברמת אפעל, רמת גן" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

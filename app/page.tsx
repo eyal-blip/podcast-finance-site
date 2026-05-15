@@ -73,34 +73,31 @@ export default function HomePage() {
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36 text-center">
-          <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8 text-sm font-medium"
-            style={{ borderColor: 'rgba(134,140,149,0.4)', color: '#A8AEB8', background: 'rgba(134,140,149,0.08)' }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#868C95] animate-pulse" />
-            ידע פיננסי לבנקאות הפרטית
-          </div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black mb-6 leading-tight">
-            <span className="block text-white">פודקאסט</span>
-            <span
-              className="block"
-              style={{ background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 50%, #6A7280 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
-            >
-              פיננסים
-            </span>
-          </h1>
-          <p className="text-xl text-[#B0A090] max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-            תכנים פיננסיים מקצועיים לקוחות הבנקאות הפרטית של כל הבנקים
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/podcast" className="btn-gold text-base px-8 py-4 justify-center">
-              <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-              לפודקאסט
-            </Link>
-            <Link href="/contact" className="btn-outline-gold text-base px-8 py-4 justify-center !border-[#868C95] !text-[#A8AEB8] hover:!text-white">
-              פגישת ייעוץ ←
-            </Link>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex items-center gap-8">
+          {/* Logo — ימין ב-RTL */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.png"
+            alt="פיננסים — ניהול הון פרטי"
+            className="h-24 md:h-32 w-auto object-contain flex-shrink-0 rounded-2xl"
+          />
+          {/* Content — שמאל */}
+          <div className="flex-1 flex flex-col gap-4">
+            <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">
+              פודקאסט פיננסים
+            </h1>
+            <p className="text-[#B0A090] text-sm leading-relaxed max-w-lg">
+              תכנים פיננסיים מקצועיים ללקוחות הבנקאות הפרטית של כל הבנקים
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/podcast" className="btn-gold text-sm px-5 py-2.5 justify-center">
+                <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                לפודקאסט
+              </Link>
+              <Link href="/contact" className="btn-outline-gold text-sm px-5 py-2.5 justify-center !border-[#868C95] !text-[#A8AEB8] hover:!text-white">
+                פגישת ייעוץ ←
+              </Link>
+            </div>
           </div>
         </div>
       </section>

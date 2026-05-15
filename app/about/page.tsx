@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
-      <PageHeader />
+      <PageHeader title="פיננסים ניהול הון פרטי" subtitle="Family Office | ייעוץ השקעות | ייעוץ פנסיוני" />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Placeholder for about text */}
         <div className="card-ivory rounded-2xl p-10 shadow-sm text-center">

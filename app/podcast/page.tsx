@@ -130,15 +130,12 @@ export default function PodcastPage() {
 
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
-      <PageHeader>
-        <p className="text-[#B0A090] text-sm leading-relaxed">
-          סקירות שווקים, ניתוחי השקעות ותובנות פיננסיות — זמינים לצפייה ולהאזנה
-        </p>
+      <PageHeader title="פודקאסט פיננסים" subtitle="סקירות שווקים, ניתוחי השקעות ותובנות פיננסיות — זמינים לצפייה ולהאזנה">
         <a
           href="https://www.youtube.com/@financeinst"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-semibold transition-all hover:opacity-90 text-sm"
+          className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-semibold transition-all hover:opacity-90 text-sm self-start"
           style={{ background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 100%)', color: '#1E3651' }}
         >
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

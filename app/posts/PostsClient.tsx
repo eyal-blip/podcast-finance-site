@@ -50,7 +50,7 @@ export default function PostsClient() {
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
       {/* Header */}
-      <PageHeader />
+      <PageHeader title="144+ פוסטים מקוריים" subtitle="ניתוחים, סקירות שווקים ודעות — מאת מומחי פיננסים ניהול הון פרטי" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Filters */}

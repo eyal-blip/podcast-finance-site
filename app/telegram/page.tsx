@@ -111,15 +111,12 @@ export default function TelegramPage() {
 
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
-      <PageHeader>
-        <p className="text-[#B0A090] text-sm leading-relaxed">
-          סקירות שווקים, ניתוחי השקעות ותובנות פיננסיות — ישירות מערוץ הטלגראם
-        </p>
+      <PageHeader title="פודקאסט פיננסים" subtitle="סקירות שווקים, ניתוחי השקעות ותובנות פיננסיות — ישירות מערוץ הטלגראם">
         <a
           href="https://t.me/PodcastFinance"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-semibold text-white transition-all hover:opacity-90 text-sm"
+          className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-semibold text-white transition-all hover:opacity-90 text-sm self-start"
           style={{ background: '#2AABEE' }}
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
