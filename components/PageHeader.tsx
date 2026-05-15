@@ -19,7 +19,7 @@ export function PageHeader({ title, subtitle, children }: PageHeaderProps) {
         <div className="flex-1 flex items-center justify-center">
           <div className="flex flex-col gap-3">
             <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">{title}</h1>
-            {subtitle && <p className="text-[#B0A090] text-sm leading-relaxed">{subtitle}</p>}
+            {subtitle && <p className="text-[#8A95A8] text-sm leading-relaxed">{subtitle}</p>}
             {children}
           </div>
         </div>

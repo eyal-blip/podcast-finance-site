@@ -87,7 +87,7 @@ export default function HomePage() {
               <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">
                 פודקאסט פיננסים
               </h1>
-              <p className="text-[#B0A090] text-sm leading-relaxed max-w-lg">
+              <p className="text-[#8A95A8] text-sm leading-relaxed max-w-lg">
                 תכנים פיננסיים מקצועיים ללקוחות הבנקאות הפרטית של כל הבנקים
               </p>
               <div className="flex flex-wrap gap-3">
@@ -169,7 +169,7 @@ export default function HomePage() {
       <section className="py-16 bg-[#1E3651] text-center">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-white mb-3">פגישת ייעוץ ראשונית ללא התחייבות</h2>
-          <p className="text-[#B0A090] mb-8">יועץ השקעות בכיר ממתין לכם — במשרדנו ברמת אפעל, רמת גן</p>
+          <p className="text-[#8A95A8] mb-8">יועץ השקעות בכיר ממתין לכם — במשרדנו ברמת אפעל, רמת גן</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-gold text-base px-8 py-4 justify-center">
               לתיאום פגישה ←
