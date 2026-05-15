@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { PageHeader } from '@/components/PageHeader'
 
 export const metadata: Metadata = {
   title: 'צור קשר | podcast.finance',
@@ -8,15 +9,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#F8F3E8]">
-      <div className="bg-[#1E3651] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 text-sm" style={{ borderColor: 'rgba(134,140,149,0.4)', color: '#A8AEB8', background: 'rgba(134,140,149,0.08)' }}>
-            ◈ צור קשר
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">פגישת <span style={{ background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>ייעוץ</span></h1>
-          <p className="text-[#B0A090] text-lg">ראשונית ללא התחייבות — במשרדנו ברמת אפעל, רמת גן</p>
-        </div>
-      </div>
+      <PageHeader />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
