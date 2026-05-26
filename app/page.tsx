@@ -73,6 +73,9 @@ const latestPosts = [
   { title: 'סקירת שווקים רבעון שלישי 2025', author: 'מיכל יוזפסון', date: '20.9.25', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/סקירת-שווקים-דצמבר-2024-1', excerpt: 'המומנטום החיובי בשווקי המניות והאג"ח נמשכו אל תוך שנת 2025 והביאו את השווקים לשיאים חדשים.' },
   { title: 'סקירת שווקים לקראת רבעון שני 2025', author: 'מיכל יוזפסון', date: '1.4.25', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/סקירת-שווקים-דצמבר-2024', excerpt: 'שנת 2025 נפתחה במומנטום חיובי בשווקי המניות והאג"ח, עם תחזיות צמיחה יציבות לכלכלה הגלובלית.' },
   { title: 'על כוחם של תאגידים וכישלונן של ממשלות', author: 'ד"ר איתי גלילי', date: '1.4.25', category: 'מאמר דעה', href: 'https://nihulhon.co.il/posts/על-כוחם-של-תאגידים-וכישלונן-ש', excerpt: 'ישראל נמצאת בתקופה מאתגרת מאוד בהיבט הביטחוני, הפוליטי והחברתי — ונדרשת הנהגה כלכלית חזקה.' },
+  { title: 'השקעה בקרנות גידור — מה שצריך לדעת', author: 'ד"ר איתי גלילי', date: '1.9.24', category: 'השקעות', href: 'https://nihulhon.co.il/posts/', excerpt: 'קרנות גידור כיצד הן עובדות, מה היתרונות והחסרונות ומי צריך לשקול השקעה בהן.' },
+  { title: 'תכנון פנסיוני בגיל 50 — עדיין לא מאוחר', author: 'מיכל יוזפסון', date: '1.6.24', category: 'פנסיה', href: 'https://nihulhon.co.il/posts/', excerpt: 'גם בגיל 50 אפשר לשפר משמעותית את מצב הפנסיה — הצעדים החשובים שניתן לנקוט עכשיו.' },
+  { title: 'ניהול הון בעידן האינפלציה', author: 'ד"ר איתי גלילי', date: '1.3.24', category: 'מאקרו', href: 'https://nihulhon.co.il/posts/', excerpt: 'כיצד מגנים על ערך ההון בסביבה אינפלציונית — אסטרטגיות ונכסים שמייצרים הגנה אמיתית.' },
 ]
 
 const catColors: Record<string, string> = {
@@ -139,15 +142,10 @@ export default function HomePage() {
                 </p>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-2">
+              {/* CTA */}
+              <div>
                 <a href="#lead-form" className="btn-gold text-sm px-5 py-2.5 justify-center font-bold">
                   קבע פגישת זום חינמית ←
-                </a>
-                <a href="#map"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold border transition-all duration-200"
-                  style={{ borderColor: '#3A6A50', color: '#8ECFA6', background: 'transparent' }}>
-                  מפת המוצרים ↓
                 </a>
               </div>
 
@@ -177,7 +175,7 @@ export default function HomePage() {
         {/* ── Q3: POSTS (bottom-right in RTL = third in DOM) ─────────────── */}
         <div className="flex flex-col overflow-hidden order-3" style={{ minHeight: '50vh', background: '#fff' }}>
           <QuadHeader icon="◈" title="פוסטים אחרונים" href="/posts" linkLabel="כל 144+ הפוסטים" />
-          <div className="grid grid-cols-2 overflow-hidden flex-1" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
+          <div className="grid grid-cols-3 overflow-hidden flex-1" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
             {latestPosts.map((p) => (
               <a key={p.href} href={p.href} target="_blank" rel="noopener noreferrer"
                 className="flex flex-col p-2.5 hover:bg-[#EAF3ED] transition-colors group overflow-hidden"
