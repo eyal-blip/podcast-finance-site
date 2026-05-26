@@ -13,48 +13,57 @@ interface Post {
   image?: string | null
 }
 
+function isYouTube(url: string) {
+  return /youtube\.com|youtu\.be/i.test(url || '')
+}
+
 function MiniCard({ p }: { p: Post }) {
   const url = p.url || p.linkUrl || p.postUrl || '#'
   const date = p.dateISO ? new Date(p.dateISO).toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric' }) : ''
+  const isYT = isYouTube(url)
   const title = p.title || ''
   const text = p.text || ''
-  const display = title || text
 
   return (
     <a href={url} target="_blank" rel="noopener noreferrer"
-      className="flex flex-col p-2 group transition-colors overflow-hidden"
+      className="flex flex-col overflow-hidden group transition-colors"
       style={{ borderBottom: '1px solid #BACEC4', borderLeft: '1px solid #BACEC4', background: '#EBF5EE' }}>
 
-      {/* Source + date */}
-      <div className="flex items-center justify-between mb-1 flex-shrink-0">
-        <span className="text-[8px] font-bold truncate" style={{ color: '#2AABEE' }}>
-          {p.site || 'PodcastFinance'}
-        </span>
-        {date && <time className="text-[8px] flex-shrink-0" style={{ color: '#62806A' }}>{date}</time>}
+      {p.image && (
+        <div className="relative flex-shrink-0 overflow-hidden" style={{ aspectRatio: '16/5' }}>
+          <img src={p.image} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          {isYT && (
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.6)' }}>
+                <svg width="8" height="8" viewBox="0 0 16 16" fill="white"><polygon points="5,3 13,8 5,13" /></svg>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      <div className="p-2 flex flex-col gap-1 flex-1">
+        <div className="flex items-center justify-between">
+          <span className="text-[8px] font-bold truncate" style={{ color: '#2AABEE' }}>
+            {p.site || 'PodcastFinance'}
+          </span>
+          {date && <time className="text-[8px]" style={{ color: '#62806A' }}>{date}</time>}
+        </div>
+
+        {title && (
+          <p className="text-[10px] font-bold leading-snug line-clamp-2 group-hover:text-[#2A5C3A] transition-colors"
+            style={{ color: '#1B3A28' }}>
+            {title}
+          </p>
+        )}
+
+        {text && (
+          <p className="text-[9px] leading-snug flex-1 overflow-hidden"
+            style={{ color: '#3A6050', display: '-webkit-box', WebkitLineClamp: title ? 3 : 5, WebkitBoxOrient: 'vertical' as const }}>
+            {text}
+          </p>
+        )}
       </div>
-
-      {/* Title — bold */}
-      {title && (
-        <p className="text-[10px] font-bold leading-snug mb-1 group-hover:text-[#2A5C3A] transition-colors flex-shrink-0"
-          style={{ color: '#1B3A28', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
-          {title}
-        </p>
-      )}
-
-      {/* Text body — fills space */}
-      {text && (
-        <p className="text-[9px] leading-relaxed flex-1 overflow-hidden"
-          style={{ color: '#3A6050', display: '-webkit-box', WebkitLineClamp: title ? 5 : 8, WebkitBoxOrient: 'vertical' as const }}>
-          {text}
-        </p>
-      )}
-
-      {/* If no title, show display text large */}
-      {!title && !text && (
-        <p className="text-[9px] leading-relaxed flex-1" style={{ color: '#62806A' }}>
-          {display}
-        </p>
-      )}
     </a>
   )
 }
@@ -73,7 +82,8 @@ export default function HomeTelegramFeed() {
   if (loading) return (
     <div className="grid grid-cols-3 h-full" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
       {Array(9).fill(null).map((_, i) => (
-        <div key={i} className="animate-pulse" style={{ background: '#E4F0E8', borderBottom: '1px solid #BACEC4', borderLeft: '1px solid #BACEC4' }} />
+        <div key={i} className="animate-pulse"
+          style={{ background: '#E4F0E8', borderBottom: '1px solid #BACEC4', borderLeft: '1px solid #BACEC4' }} />
       ))}
     </div>
   )
@@ -83,9 +93,7 @@ export default function HomeTelegramFeed() {
       <span className="text-2xl" style={{ color: '#2AABEE' }}>✈</span>
       <p className="text-sm text-center" style={{ color: '#62806A' }}>לא ניתן לטעון עדכונים</p>
       <a href="https://t.me/PodcastFinance" target="_blank" rel="noopener noreferrer"
-        className="text-xs font-semibold" style={{ color: '#2AABEE' }}>
-        עברו לטלגראם ישירות ←
-      </a>
+        className="text-xs font-semibold" style={{ color: '#2AABEE' }}>עברו לטלגראם ישירות ←</a>
     </div>
   )
 
