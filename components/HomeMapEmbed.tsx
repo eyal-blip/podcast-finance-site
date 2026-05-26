@@ -12,8 +12,8 @@ export default function HomeMapEmbed() {
         title="מפת המוצרים הפנסיוניים"
         className="absolute left-0 right-0 w-full border-0"
         style={{
-          top: showFilters ? '0px' : '-155px',
-          height: showFilters ? '100%' : 'calc(100% + 155px)',
+          top: showFilters ? '0px' : '-290px',
+          height: showFilters ? '100%' : 'calc(100% + 290px)',
           transition: 'top 0.35s ease, height 0.35s ease',
         }}
         loading="lazy"
