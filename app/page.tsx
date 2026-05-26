@@ -178,23 +178,24 @@ export default function HomePage() {
           <div className="grid grid-cols-3 overflow-hidden flex-1" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
             {latestPosts.map((p) => (
               <a key={p.href} href={p.href} target="_blank" rel="noopener noreferrer"
-                className="flex flex-col p-2.5 hover:bg-[#EAF3ED] transition-colors group overflow-hidden"
-                style={{ borderBottom: '1px solid #BACEC4', borderLeft: '1px solid #BACEC4' }}>
-                <div className="flex items-center gap-1 mb-1">
-                  <span className="text-[9px] px-1.5 py-0 rounded-full font-semibold flex-shrink-0"
-                    style={{ background: `${catColors[p.category] || '#2A5C3A'}18`, color: catColors[p.category] || '#2A5C3A' }}>
+                className="flex flex-col p-2 group overflow-hidden transition-colors"
+                style={{ borderBottom: '1px solid #BACEC4', borderLeft: '1px solid #BACEC4', background: '#EBF5EE' }}>
+                <div className="flex items-center justify-between gap-1 mb-1 flex-shrink-0">
+                  <span className="text-[8px] font-bold truncate"
+                    style={{ color: catColors[p.category] || '#2A5C3A' }}>
                     {p.category}
                   </span>
-                  <span className="text-[9px] flex-shrink-0" style={{ color: '#62806A' }}>{p.date}</span>
+                  <span className="text-[8px] flex-shrink-0" style={{ color: '#62806A' }}>{p.date}</span>
                 </div>
-                <p className="text-[11px] font-bold leading-snug line-clamp-2 mb-1 group-hover:text-[#2A5C3A] transition-colors"
-                  style={{ color: '#1B3A28' }}>
+                <p className="text-[10px] font-bold leading-snug mb-1 group-hover:text-[#2A5C3A] transition-colors flex-shrink-0"
+                  style={{ color: '#1B3A28', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                   {p.title}
                 </p>
-                <p className="text-[10px] leading-snug line-clamp-2 flex-1" style={{ color: '#62806A' }}>
+                <p className="text-[9px] leading-relaxed flex-1 overflow-hidden" style={{ color: '#3A6050',
+                  display: '-webkit-box', WebkitLineClamp: 6, WebkitBoxOrient: 'vertical' }}>
                   {p.excerpt}
                 </p>
-                <span className="text-[9px] mt-1 font-medium" style={{ color: '#4A7A5A' }}>
+                <span className="text-[8px] mt-1 font-semibold flex-shrink-0" style={{ color: '#4A7A5A' }}>
                   {p.author}
                 </span>
               </a>
