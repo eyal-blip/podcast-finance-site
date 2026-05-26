@@ -48,26 +48,26 @@ export default function PostsClient() {
   }, [filtered])
 
   return (
-    <div className="min-h-screen bg-[#F8F3E8]">
+    <div className="min-h-screen bg-[#EAF3ED]">
       {/* Header */}
       <PageHeader title="144+ פוסטים מקוריים" subtitle="ניתוחים, סקירות שווקים ודעות — מאת מומחי פיננסים ניהול הון פרטי" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Filters */}
-        <div className="bg-white rounded-2xl border border-[#DDD5C0] p-5 mb-10 shadow-sm">
+        <div className="bg-white rounded-2xl border border-[#BACEC4] p-5 mb-10 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* Search */}
             <div className="md:col-span-1">
-              <label className="block text-xs font-semibold text-[#5A4F3F] mb-1.5">חיפוש</label>
+              <label className="block text-xs font-semibold text-[#28402E] mb-1.5">חיפוש</label>
               <div className="relative">
                 <input
                   type="text"
                   placeholder="חפש פוסט..."
                   value={search}
                   onChange={e => setSearch(e.target.value)}
-                  className="w-full px-4 py-2.5 text-sm rounded-lg border border-[#DDD5C0] bg-[#FAFAF8] text-[#1E3651] focus:outline-none focus:border-[#868C95] transition-colors pr-9"
+                  className="w-full px-4 py-2.5 text-sm rounded-lg border border-[#BACEC4] bg-[#FAFAF8] text-[#1B3A28] focus:outline-none focus:border-[#868C95] transition-colors pr-9"
                 />
-                <svg className="absolute right-3 top-3 w-4 h-4 text-[#8C7B65]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute right-3 top-3 w-4 h-4 text-[#62806A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
@@ -75,11 +75,11 @@ export default function PostsClient() {
 
             {/* Year */}
             <div>
-              <label className="block text-xs font-semibold text-[#5A4F3F] mb-1.5">שנה</label>
+              <label className="block text-xs font-semibold text-[#28402E] mb-1.5">שנה</label>
               <select
                 value={selectedYear}
                 onChange={e => setSelectedYear(e.target.value)}
-                className="w-full px-3 py-2.5 text-sm rounded-lg border border-[#DDD5C0] bg-[#FAFAF8] text-[#1E3651] focus:outline-none focus:border-[#868C95] transition-colors"
+                className="w-full px-3 py-2.5 text-sm rounded-lg border border-[#BACEC4] bg-[#FAFAF8] text-[#1B3A28] focus:outline-none focus:border-[#868C95] transition-colors"
               >
                 {years.map(y => <option key={y} value={y}>{y}</option>)}
               </select>
@@ -87,11 +87,11 @@ export default function PostsClient() {
 
             {/* Category */}
             <div>
-              <label className="block text-xs font-semibold text-[#5A4F3F] mb-1.5">קטגוריה</label>
+              <label className="block text-xs font-semibold text-[#28402E] mb-1.5">קטגוריה</label>
               <select
                 value={selectedCategory}
                 onChange={e => setSelectedCategory(e.target.value)}
-                className="w-full px-3 py-2.5 text-sm rounded-lg border border-[#DDD5C0] bg-[#FAFAF8] text-[#1E3651] focus:outline-none focus:border-[#868C95] transition-colors"
+                className="w-full px-3 py-2.5 text-sm rounded-lg border border-[#BACEC4] bg-[#FAFAF8] text-[#1B3A28] focus:outline-none focus:border-[#868C95] transition-colors"
               >
                 {categories.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
@@ -99,11 +99,11 @@ export default function PostsClient() {
 
             {/* Author */}
             <div>
-              <label className="block text-xs font-semibold text-[#5A4F3F] mb-1.5">כותב</label>
+              <label className="block text-xs font-semibold text-[#28402E] mb-1.5">כותב</label>
               <select
                 value={selectedAuthor}
                 onChange={e => setSelectedAuthor(e.target.value)}
-                className="w-full px-3 py-2.5 text-sm rounded-lg border border-[#DDD5C0] bg-[#FAFAF8] text-[#1E3651] focus:outline-none focus:border-[#868C95] transition-colors"
+                className="w-full px-3 py-2.5 text-sm rounded-lg border border-[#BACEC4] bg-[#FAFAF8] text-[#1B3A28] focus:outline-none focus:border-[#868C95] transition-colors"
               >
                 {authors.map(a => <option key={a} value={a}>{a}</option>)}
               </select>
@@ -111,12 +111,12 @@ export default function PostsClient() {
           </div>
 
           {/* Results count */}
-          <div className="mt-3 text-xs text-[#8C7B65]">
+          <div className="mt-3 text-xs text-[#62806A]">
             {filtered.length} פוסטים
             {(selectedYear !== 'הכל' || selectedCategory !== 'הכל' || selectedAuthor !== 'הכל' || search) && (
               <button
                 onClick={() => { setSearch(''); setSelectedYear('הכל'); setSelectedCategory('הכל'); setSelectedAuthor('הכל') }}
-                className="mr-3 text-[#868C95] hover:text-[#6A7280] underline"
+                className="mr-3 text-[#868C95] hover:text-[#4A7A5A] underline"
               >
                 נקה סינון
               </button>
@@ -126,15 +126,15 @@ export default function PostsClient() {
 
         {/* Posts by Year */}
         {byYear.length === 0 ? (
-          <div className="text-center py-20 text-[#8C7B65]">לא נמצאו פוסטים תואמים</div>
+          <div className="text-center py-20 text-[#62806A]">לא נמצאו פוסטים תואמים</div>
         ) : (
           byYear.map(([year, posts]) => (
             <div key={year} className="mb-12">
               {/* Year Header */}
               <div className="flex items-center gap-4 mb-6">
-                <h2 className="text-2xl font-black text-[#1E3651]">{year}</h2>
-                <div className="flex-1 h-px bg-[#DDD5C0]" />
-                <span className="text-sm text-[#8C7B65]">{posts.length} פוסטים</span>
+                <h2 className="text-2xl font-black text-[#1B3A28]">{year}</h2>
+                <div className="flex-1 h-px bg-[#BACEC4]" />
+                <span className="text-sm text-[#62806A]">{posts.length} פוסטים</span>
               </div>
 
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
@@ -149,18 +149,18 @@ export default function PostsClient() {
                     <div className="flex items-center gap-2 mb-2">
                       <span
                         className="text-xs px-2 py-0.5 rounded-full font-medium"
-                        style={{ background: 'rgba(134,140,149,0.12)', color: '#6A7280' }}
+                        style={{ background: 'rgba(134,140,149,0.12)', color: '#4A7A5A' }}
                       >
                         {post.category}
                       </span>
-                      <span className="text-xs text-[#8C7B65]">{post.date}</span>
+                      <span className="text-xs text-[#62806A]">{post.date}</span>
                     </div>
-                    <h3 className="font-semibold text-[#1E3651] mb-2 text-sm leading-snug group-hover:text-[#6A7280] transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-[#1B3A28] mb-2 text-sm leading-snug group-hover:text-[#4A7A5A] transition-colors line-clamp-2">
                       {post.title}
                     </h3>
-                    <p className="text-[#8C7B65] text-xs leading-relaxed flex-1 line-clamp-3 mb-3">{post.excerpt}</p>
+                    <p className="text-[#62806A] text-xs leading-relaxed flex-1 line-clamp-3 mb-3">{post.excerpt}</p>
                     <div className="flex items-center justify-between mt-auto">
-                      <span className="text-xs text-[#5A4F3F] font-medium">{post.author}</span>
+                      <span className="text-xs text-[#28402E] font-medium">{post.author}</span>
                       <span className="text-xs font-medium" style={{ color: '#868C95' }}>קרא ←</span>
                     </div>
                   </a>

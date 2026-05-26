@@ -98,7 +98,7 @@ export default function ArticlesSection() {
                 <span className="text-xs text-gray-600">{article.date}</span>
               </div>
 
-              <h3 className="font-semibold text-white mb-3 leading-snug group-hover:text-[#A8AEB8] transition-colors line-clamp-2">
+              <h3 className="font-semibold text-white mb-3 leading-snug group-hover:text-[#A8CCB8] transition-colors line-clamp-2">
                 {article.title}
               </h3>
 

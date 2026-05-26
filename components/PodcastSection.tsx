@@ -78,7 +78,7 @@ export default function PodcastSection() {
               </div>
 
               <div className="text-xs mb-2" style={{ color: '#868C95' }}>{ep.date}</div>
-              <h3 className="font-semibold text-white mb-2 leading-snug text-sm group-hover:text-[#A8AEB8] transition-colors line-clamp-2">
+              <h3 className="font-semibold text-white mb-2 leading-snug text-sm group-hover:text-[#A8CCB8] transition-colors line-clamp-2">
                 {ep.title}
               </h3>
               <p className="text-gray-500 text-xs leading-relaxed flex-1 line-clamp-3">{ep.description}</p>

@@ -25,7 +25,7 @@ function PostCard({ p }: { p: Post }) {
 
   return (
     <article className="bg-white flex flex-col overflow-hidden transition-all duration-300 hover:shadow-md"
-      style={{ border: '1px solid #DDD5C0', borderRadius: '2px' }}>
+      style={{ border: '1px solid #BACEC4', borderRadius: '2px' }}>
 
       {/* Image */}
       {p.image && (
@@ -56,7 +56,7 @@ function PostCard({ p }: { p: Post }) {
           <span className="font-medium truncate max-w-[60%]" style={{ color: '#868C95' }}>
             {p.site || 'PodcastFinance'}
           </span>
-          {date && <time className="text-[#1E3651]/40">{date}</time>}
+          {date && <time className="text-[#1B3A28]/40">{date}</time>}
         </div>
 
         {/* Divider */}
@@ -64,7 +64,7 @@ function PostCard({ p }: { p: Post }) {
 
         {/* Title */}
         {p.title && (
-          <h3 className="font-bold text-sm leading-snug" style={{ color: '#1E3651' }}>
+          <h3 className="font-bold text-sm leading-snug" style={{ color: '#1B3A28' }}>
             <a href={url} target="_blank" rel="noopener noreferrer"
               className="hover:opacity-70 transition-opacity">
               {p.title}
@@ -110,7 +110,7 @@ export default function TelegramPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#F8F3E8]">
+    <div className="min-h-screen bg-[#EAF3ED]">
       <PageHeader title="פודקאסט פיננסים" subtitle="סקירות שווקים, ניתוחי השקעות ותובנות פיננסיות — ישירות מערוץ הטלגראם">
         <a
           href="https://t.me/PodcastFinance"
@@ -131,7 +131,7 @@ export default function TelegramPage() {
         {loading && (
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {Array(6).fill(null).map((_, i) => (
-              <div key={i} className="animate-pulse bg-white h-52" style={{ border: '1px solid #DDD5C0' }} />
+              <div key={i} className="animate-pulse bg-white h-52" style={{ border: '1px solid #BACEC4' }} />
             ))}
           </div>
         )}

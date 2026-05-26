@@ -34,8 +34,8 @@ export default function LeadForm() {
     return (
       <div className="text-center py-10 px-6">
         <div className="text-4xl mb-4">✓</div>
-        <h3 className="text-xl font-bold text-[#1E3651] mb-2">קיבלנו! נחזור אליך בהקדם</h3>
-        <p className="text-[#5A4F3F] text-sm">נשלח לך הזמנה לפגישת זום — בדרך כלל תוך יום עסקים אחד.</p>
+        <h3 className="text-xl font-bold text-[#1B3A28] mb-2">קיבלנו! נחזור אליך בהקדם</h3>
+        <p className="text-[#28402E] text-sm">נשלח לך הזמנה לפגישת זום — בדרך כלל תוך יום עסקים אחד.</p>
       </div>
     )
   }

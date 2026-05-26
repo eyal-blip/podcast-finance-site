@@ -78,7 +78,7 @@ export default function PostsSection() {
                 </span>
                 <span className="text-xs text-gray-600">{posts[0].date}</span>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#A8AEB8] transition-colors leading-snug">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#A8CCB8] transition-colors leading-snug">
                 {posts[0].title}
               </h3>
               <p className="text-gray-400 leading-relaxed mb-4">{posts[0].excerpt}</p>
@@ -111,7 +111,7 @@ export default function PostsSection() {
               className="card-dark p-6 rounded-xl group hover:border-[#868C95]/40 transition-all duration-200 flex flex-col"
             >
               <div className="text-xs text-gray-600 mb-2">{post.date}</div>
-              <h3 className="font-semibold text-white mb-3 leading-snug group-hover:text-[#A8AEB8] transition-colors line-clamp-2">
+              <h3 className="font-semibold text-white mb-3 leading-snug group-hover:text-[#A8CCB8] transition-colors line-clamp-2">
                 {post.title}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed flex-1 line-clamp-3 mb-4">

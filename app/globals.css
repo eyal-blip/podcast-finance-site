@@ -8,13 +8,14 @@
   --gold: #868C95;
   --gold-light: #A8AEB8;
   --gold-dark: #6A7280;
-  --ivory: #F8F3E8;
-  --ivory-dark: #EDE5D0;
-  --ivory-card: #FFFFFF;
-  --text-primary: #1E3651;
-  --text-secondary: #5A4F3F;
-  --text-muted: #8C7B65;
-  --border: #DDD5C0;
+  --bottle: #1B3A28;
+  --bottle-mid: #2A5C3A;
+  --bottle-light: #EAF3ED;
+  --bottle-card: #F5FAF7;
+  --text-primary: #1B3A28;
+  --text-secondary: #28402E;
+  --text-muted: #62806A;
+  --border: #BACEC4;
 }
 
 * {
@@ -28,8 +29,8 @@ html {
 
 body {
   font-family: 'Heebo', Arial, sans-serif;
-  background-color: #F8F3E8;
-  color: #1E3651;
+  background-color: #EAF3ED;
+  color: #1B3A28;
   direction: rtl;
   overflow-x: hidden;
 }
@@ -41,7 +42,8 @@ body {
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-2 text-[#1E3651];
+    @apply text-3xl md:text-4xl font-bold mb-2;
+    color: #1B3A28;
   }
 
   .section-title-gold {
@@ -53,16 +55,19 @@ body {
   }
 
   .section-subtitle {
-    @apply text-[#5A4F3F] text-lg mb-10;
+    @apply text-lg mb-10;
+    color: #28402E;
   }
 
   .card-ivory {
-    @apply bg-white border border-[#DDD5C0] rounded-xl shadow-sm;
+    @apply bg-white rounded-xl shadow-sm;
+    border: 1px solid #BACEC4;
   }
 
   .card-ivory-warm {
-    background: #FFFDF7;
-    @apply border border-[#DDD5C0] rounded-xl;
+    background: #F5FAF7;
+    border: 1px solid #BACEC4;
+    @apply rounded-xl;
   }
 
   .btn-gold {
@@ -78,7 +83,7 @@ body {
   .btn-outline-gold {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 border-2;
     border-color: #868C95;
-    color: #6A7280;
+    color: #5A7A68;
     background: transparent;
   }
 
@@ -98,7 +103,7 @@ body {
   }
 
   .section-bg-ivory {
-    background-color: #F8F3E8;
+    background-color: #EAF3ED;
   }
 
   .section-bg-white {
@@ -106,7 +111,7 @@ body {
   }
 
   .section-bg-warm {
-    background: #EDE5D0;
+    background: #D5E8DC;
   }
 }
 
@@ -115,7 +120,7 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #EDE5D0;
+  background: #D5E8DC;
 }
 ::-webkit-scrollbar-thumb {
   background: #868C95;
@@ -124,6 +129,6 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(134, 140, 149, 0.25);
-  color: #1E3651;
+  background: rgba(42, 92, 58, 0.2);
+  color: #1B3A28;
 }

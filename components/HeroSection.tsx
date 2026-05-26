@@ -33,7 +33,7 @@ export default function HeroSection() {
           <span
             className="block"
             style={{
-              background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 50%, #6A7280 100%)',
+              background: 'linear-gradient(135deg, #868C95 0%, #A8CCB8 50%, #4A7A5A 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -72,7 +72,7 @@ export default function HeroSection() {
               <div
                 className="text-2xl font-black mb-1"
                 style={{
-                  background: 'linear-gradient(135deg, #868C95 0%, #A8AEB8 100%)',
+                  background: 'linear-gradient(135deg, #868C95 0%, #A8CCB8 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',

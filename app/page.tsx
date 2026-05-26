@@ -35,14 +35,14 @@ function PensionNetworkBackground() {
           @keyframes flow2{0%{stroke-dashoffset:80}100%{stroke-dashoffset:-80}}
           @keyframes flow3{0%{stroke-dashoffset:60}100%{stroke-dashoffset:-60}}
           @keyframes nodePulse{0%,100%{opacity:0.5}50%{opacity:1}}
-          @keyframes particlePulse{0%,100%{opacity:0.4;r:1.5}50%{opacity:1;r:2.5}}
-          .el{stroke:#A8AEB8;stroke-width:0.3;fill:none;stroke-dasharray:3 2}
+          @keyframes pp{0%,100%{opacity:0.4;r:1.5}50%{opacity:1;r:2.5}}
+          .el{stroke:#7DB895;stroke-width:0.3;fill:none;stroke-dasharray:3 2}
           .ef1{animation:flow1 4s linear infinite}
           .ef2{animation:flow2 6s linear infinite}
           .ef3{animation:flow3 5s linear infinite}
-          .nc{fill:none;stroke:#A8AEB8;stroke-width:0.5;animation:nodePulse 3s ease-in-out infinite}
-          .nd{fill:#C8CDD5}
-          .pt{fill:#D0D5DE;animation:particlePulse 2s ease-in-out infinite}
+          .nc{fill:none;stroke:#7DB895;stroke-width:0.5;animation:nodePulse 3s ease-in-out infinite}
+          .nd{fill:#9CCAB0}
+          .pt{fill:#7DB895;animation:pp 2s ease-in-out infinite}
         `}</style>
       </defs>
       {edges.map(([a,b],i)=>{
@@ -50,10 +50,8 @@ function PensionNetworkBackground() {
         const cls=i%3===0?'ef1':i%3===1?'ef2':'ef3'
         return (
           <g key={`${a}-${b}`}>
-            <line className={`el ${cls}`} x1={na.x} y1={na.y} x2={nb.x} y2={nb.y}
-              style={{animationDelay:`${i*0.4}s`}}/>
-            <circle className="pt" cx={(na.x+nb.x)/2} cy={(na.y+nb.y)/2} r="1.5"
-              style={{animationDelay:`${i*0.3}s`}}/>
+            <line className={`el ${cls}`} x1={na.x} y1={na.y} x2={nb.x} y2={nb.y} style={{animationDelay:`${i*0.4}s`}}/>
+            <circle className="pt" cx={(na.x+nb.x)/2} cy={(na.y+nb.y)/2} r="1.5" style={{animationDelay:`${i*0.3}s`}}/>
           </g>
         )
       })}
@@ -67,30 +65,32 @@ function PensionNetworkBackground() {
   )
 }
 
-// ─── Latest 6 posts (static data) ────────────────────────────────────────
+// ─── Latest 6 posts with excerpts ────────────────────────────────────────
 const latestPosts = [
-  { title: '2026 – שנה של ניהול סיכונים', author: 'ד"ר איתי גלילי', date: '1.1.26', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/האם-ישראל-יכולה-לממן-את-התוכנ' },
-  { title: 'סקירת שווקים לקראת 2026', author: 'מיכל יוזפסון', date: '1.1.26', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/סקירת-שווקים-לקראת-רבעון-שני' },
-  { title: 'האם ישראל יכולה לממן את תוכנית הבינה המלאכותית?', author: 'ד"ר איתי גלילי', date: '20.9.25', category: 'מדיניות', href: 'https://nihulhon.co.il/posts/מבט-אל-המציאות-של-שנת-2050' },
-  { title: 'סקירת שווקים רבעון שלישי 2025', author: 'מיכל יוזפסון', date: '20.9.25', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/סקירת-שווקים-דצמבר-2024-1' },
-  { title: 'סקירת שווקים לקראת רבעון שני 2025', author: 'מיכל יוזפסון', date: '1.4.25', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/סקירת-שווקים-דצמבר-2024' },
-  { title: 'על כוחם של תאגידים וכישלונן של ממשלות', author: 'ד"ר איתי גלילי', date: '1.4.25', category: 'מאמר דעה', href: 'https://nihulhon.co.il/posts/על-כוחם-של-תאגידים-וכישלונן-ש' },
+  { title: '2026 – שנה של ניהול סיכונים', author: 'ד"ר איתי גלילי', date: '1.1.26', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/האם-ישראל-יכולה-לממן-את-התוכנ', excerpt: 'השווקים הפיננסיים מסיימים את שנת 2025 בתשואות נאות. שוק ההון הישראלי בולט לחיוב על רקע סיום המלחמה.' },
+  { title: 'סקירת שווקים לקראת 2026', author: 'מיכל יוזפסון', date: '1.1.26', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/סקירת-שווקים-לקראת-רבעון-שני', excerpt: 'שווקי המניות הגלובליים הציגו ביצועים חזקים, למרות ריבוי זעזועים פוליטיים וגיאופוליטיים.' },
+  { title: 'האם ישראל יכולה לממן את תוכנית הבינה המלאכותית?', author: 'ד"ר איתי גלילי', date: '20.9.25', category: 'מדיניות', href: 'https://nihulhon.co.il/posts/מבט-אל-המציאות-של-שנת-2050', excerpt: 'בשנתיים האחרונות המהפכה הטכנולוגית בתחום הבינה המלאכותית יצאה מתחומי מוסדות המחקר לשימושים יומיומיים.' },
+  { title: 'סקירת שווקים רבעון שלישי 2025', author: 'מיכל יוזפסון', date: '20.9.25', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/סקירת-שווקים-דצמבר-2024-1', excerpt: 'המומנטום החיובי בשווקי המניות והאג"ח נמשכו אל תוך שנת 2025 והביאו את השווקים לשיאים חדשים.' },
+  { title: 'סקירת שווקים לקראת רבעון שני 2025', author: 'מיכל יוזפסון', date: '1.4.25', category: 'סקירת שווקים', href: 'https://nihulhon.co.il/posts/סקירת-שווקים-דצמבר-2024', excerpt: 'שנת 2025 נפתחה במומנטום חיובי בשווקי המניות והאג"ח, עם תחזיות צמיחה יציבות לכלכלה הגלובלית.' },
+  { title: 'על כוחם של תאגידים וכישלונן של ממשלות', author: 'ד"ר איתי גלילי', date: '1.4.25', category: 'מאמר דעה', href: 'https://nihulhon.co.il/posts/על-כוחם-של-תאגידים-וכישלונן-ש', excerpt: 'ישראל נמצאת בתקופה מאתגרת מאוד בהיבט הביטחוני, הפוליטי והחברתי — ונדרשת הנהגה כלכלית חזקה.' },
 ]
 
 const catColors: Record<string, string> = {
-  'סקירת שווקים': '#5A8F3C', 'מדיניות': '#6B7C99', 'מאמר דעה': '#9B5E2A',
-  'השקעות': '#7B4FC9', 'פנסיה': '#2E7FC9', 'מאקרו': '#868C95',
+  'סקירת שווקים': '#2A7A4A', 'מדיניות': '#4A6A8A', 'מאמר דעה': '#7A5A2A',
+  'השקעות': '#5A4A8A', 'פנסיה': '#2A6A8A', 'מאקרו': '#4A6A5A',
 }
 
-// ─── Section header strip ────────────────────────────────────────────────
-function SectionHeader({ icon, title, href, linkLabel }: { icon: string; title: string; href: string; linkLabel: string }) {
+// ─── Quadrant strip header ────────────────────────────────────────────────
+function QuadHeader({ icon, title, href, linkLabel }: { icon: string; title: string; href: string; linkLabel: string }) {
   return (
-    <div className="flex items-center justify-between px-3 py-2 border-b border-[#DDD5C0] bg-white flex-shrink-0">
+    <div className="flex items-center justify-between px-3 py-2 flex-shrink-0"
+      style={{ background: '#1B3A28', borderBottom: '1px solid #2A5C3A' }}>
       <div className="flex items-center gap-1.5">
         <span className="text-sm">{icon}</span>
-        <span className="text-xs font-bold text-[#1E3651]">{title}</span>
+        <span className="text-xs font-bold text-white">{title}</span>
       </div>
-      <a href={href} className="text-[10px] font-medium" style={{ color: '#868C95' }}>
+      <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
+        className="text-[10px] font-medium hover:text-white transition-colors" style={{ color: '#8AB898' }}>
         {linkLabel} →
       </a>
     </div>
@@ -100,132 +100,129 @@ function SectionHeader({ icon, title, href, linkLabel }: { icon: string; title: 
 export default function HomePage() {
   return (
     <>
-      {/* ═══ MAIN DASHBOARD GRID — 2×2 ════════════════════════════════════ */}
-      <section className="grid grid-cols-1 md:grid-cols-2" style={{ minHeight: 'calc(100vh - 4rem)' }}>
+      {/* ═══ MAIN 2×2 DASHBOARD — bottle green frame ══════════════════════ */}
+      <section className="grid grid-cols-1 md:grid-cols-2"
+        style={{ minHeight: 'calc(100vh - 4rem)', background: '#2A5C3A', gap: '2px' }}>
 
-        {/* ── Q1 TOP-RIGHT: HERO ─────────────────────────────────────────── */}
-        <div className="relative bg-[#1E3651] flex flex-col justify-center overflow-hidden order-1 md:order-2"
+        {/* ── Q1: HERO (top-right in RTL = first in DOM) ─────────────────── */}
+        <div className="relative bg-[#1B3A28] flex flex-col justify-center overflow-hidden order-1"
           style={{ minHeight: '50vh' }}>
           <PensionNetworkBackground />
+
+          {/* Glass backdrop for text legibility */}
           <div className="relative z-10 p-6 md:p-8 flex flex-col gap-4">
-            {/* Brand — LARGE */}
-            <div>
-              <div className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight"
-                style={{ background: 'linear-gradient(135deg, #ffffff 0%, #A8AEB8 60%, #6A7280 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                scale-up.finance
+            <div className="rounded-2xl p-5 flex flex-col gap-4"
+              style={{ background: 'rgba(10, 28, 18, 0.6)', backdropFilter: 'blur(8px)', border: '1px solid rgba(90, 160, 110, 0.2)' }}>
+
+              {/* Brand — VERY LARGE */}
+              <div>
+                <div className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-none"
+                  style={{ background: 'linear-gradient(135deg, #ffffff 0%, #B0D8BC 60%, #7DB895 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  scale-up.finance
+                </div>
+                <p className="text-sm mt-2 leading-snug font-semibold" style={{ color: '#A0CCB0' }}>
+                  קפיצת כמה רמות קדימה בניהול ההשקעות במוצרים הפנסיוניים שלך
+                </p>
               </div>
-              <p className="text-[#8A95A8] text-sm mt-1 leading-snug">
-                קפיצת כמה רמות קדימה בניהול ההשקעות במוצרים הפנסיוניים שלך
-              </p>
-            </div>
 
-            {/* Divider */}
-            <div className="h-px w-12" style={{ background: '#868C95' }} />
+              <div className="h-px w-10" style={{ background: '#5A9A72' }} />
 
-            {/* Headline */}
-            <div>
-              <h1 className="text-lg md:text-xl font-black text-white leading-snug">
-                המוצרים הפנסיוניים שלך
-                <span className="text-[#A8AEB8]"> מורכבים מדי</span>
-              </h1>
-              <p className="text-[#6A7A8A] text-xs mt-2 leading-relaxed">
-                קופת גמל, קרן השתלמות, ביטוח מנהלים, קרן פנסיה — כל אחד עם עשרות מסלולים,
-                דמי ניהול ורגולציה משתנה. אנחנו מפשטים, מנתחים ומנהלים — בשבילך.
-              </p>
-            </div>
+              {/* Headline */}
+              <div>
+                <h1 className="text-lg md:text-xl font-black text-white leading-snug">
+                  המוצרים הפנסיוניים שלך
+                  <span style={{ color: '#8ECFA6' }}> מורכבים מדי</span>
+                </h1>
+                <p className="text-xs mt-2 leading-relaxed" style={{ color: '#7AAA8A' }}>
+                  קופת גמל, קרן השתלמות, ביטוח מנהלים, קרן פנסיה — כל אחד עם עשרות מסלולים,
+                  דמי ניהול ורגולציה משתנה. אנחנו מפשטים, מנתחים ומנהלים — בשבילך.
+                </p>
+              </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-2">
-              <a href="#lead-form" className="btn-gold text-sm px-5 py-2.5 justify-center font-bold">
-                קבע פגישת זום חינמית ←
-              </a>
-              <a href="#map"
-                className="btn-outline-gold text-sm px-5 py-2.5 justify-center !border-[#4A5A6A] !text-[#8A95A8] hover:!text-white">
-                מפת המוצרים ↓
-              </a>
-            </div>
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-2">
+                <a href="#lead-form" className="btn-gold text-sm px-5 py-2.5 justify-center font-bold">
+                  קבע פגישת זום חינמית ←
+                </a>
+                <a href="#map"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold border transition-all duration-200"
+                  style={{ borderColor: '#3A6A50', color: '#8ECFA6', background: 'transparent' }}>
+                  מפת המוצרים ↓
+                </a>
+              </div>
 
-            {/* Trust */}
-            <div className="flex flex-wrap gap-3 text-[10px]" style={{ color: '#4A5A6A' }}>
-              {['✓ ללא עלות', '✓ זום 30 דקות', '✓ ללא התחייבות', '✓ יועץ בכיר'].map(t => (
-                <span key={t}>{t}</span>
-              ))}
+              {/* Trust */}
+              <div className="flex flex-wrap gap-3 text-[10px]" style={{ color: '#4A7A5A' }}>
+                {['✓ ללא עלות', '✓ זום 30 דקות', '✓ ללא התחייבות', '✓ יועץ בכיר'].map(t => (
+                  <span key={t} className="font-semibold">{t}</span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ── Q2 TOP-LEFT: MAP ───────────────────────────────────────────── */}
-        <div id="map" className="flex flex-col border-b border-l border-[#DDD5C0] order-2 md:order-1"
-          style={{ minHeight: '50vh' }}>
-          <SectionHeader icon="◈" title="מפת המוצרים הפנסיוניים" href="https://gemel-net.netlify.app" linkLabel="לאתר המלא" />
-          <div className="flex-1 relative">
-            <iframe
-              src="https://gemel-net.netlify.app/map"
-              title="מפת המוצרים הפנסיוניים"
-              className="absolute inset-0 w-full h-full border-0"
-              loading="lazy"
-            />
-          </div>
+        {/* ── Q2: MAP (top-left in RTL = second in DOM) ──────────────────── */}
+        <div id="map" className="flex flex-col overflow-hidden order-2"
+          style={{ minHeight: '50vh', background: '#fff' }}>
+          {/* iframe fills entire quadrant — gemel-net has its own top bar */}
+          <iframe
+            src="https://gemel-net.netlify.app/map"
+            title="מפת המוצרים הפנסיוניים"
+            className="w-full flex-1 border-0"
+            style={{ minHeight: '50vh' }}
+            loading="lazy"
+          />
         </div>
 
-        {/* ── Q3 BOTTOM-LEFT: POSTS ──────────────────────────────────────── */}
-        <div className="flex flex-col border-t border-l border-[#DDD5C0] bg-white order-3"
-          style={{ minHeight: '50vh' }}>
-          <SectionHeader icon="◈" title="פוסטים אחרונים" href="/posts" linkLabel="כל הפוסטים" />
-          <div className="flex flex-col divide-y divide-[#DDD5C0] flex-1 overflow-hidden">
+        {/* ── Q3: POSTS (bottom-right in RTL = third in DOM) ─────────────── */}
+        <div className="flex flex-col overflow-hidden order-3" style={{ minHeight: '50vh', background: '#fff' }}>
+          <QuadHeader icon="◈" title="פוסטים אחרונים" href="/posts" linkLabel="כל 144+ הפוסטים" />
+          <div className="grid grid-cols-2 overflow-hidden flex-1" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
             {latestPosts.map((p) => (
               <a key={p.href} href={p.href} target="_blank" rel="noopener noreferrer"
-                className="flex items-start gap-2 px-3 py-2 hover:bg-[#FAFAF5] transition-colors group flex-1 min-h-0">
-                <span className="text-[10px] mt-0.5 flex-shrink-0 font-bold"
-                  style={{ color: catColors[p.category] || '#868C95' }}>◈</span>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs text-[#1E3651] font-medium leading-tight line-clamp-2 group-hover:text-[#6A7280] transition-colors">
-                    {p.title}
-                  </p>
-                  <div className="flex items-center gap-2 mt-0.5">
-                    <span className="text-[9px] px-1.5 py-0 rounded-full font-medium"
-                      style={{ background: `${catColors[p.category] || '#868C95'}18`, color: catColors[p.category] || '#868C95' }}>
-                      {p.category}
-                    </span>
-                    <span className="text-[9px] text-[#8C7B65]">{p.date} · {p.author}</span>
-                  </div>
+                className="flex flex-col p-2.5 hover:bg-[#EAF3ED] transition-colors group overflow-hidden"
+                style={{ borderBottom: '1px solid #BACEC4', borderLeft: '1px solid #BACEC4' }}>
+                <div className="flex items-center gap-1 mb-1">
+                  <span className="text-[9px] px-1.5 py-0 rounded-full font-semibold flex-shrink-0"
+                    style={{ background: `${catColors[p.category] || '#2A5C3A'}18`, color: catColors[p.category] || '#2A5C3A' }}>
+                    {p.category}
+                  </span>
+                  <span className="text-[9px] flex-shrink-0" style={{ color: '#62806A' }}>{p.date}</span>
                 </div>
+                <p className="text-[11px] font-bold leading-snug line-clamp-2 mb-1 group-hover:text-[#2A5C3A] transition-colors"
+                  style={{ color: '#1B3A28' }}>
+                  {p.title}
+                </p>
+                <p className="text-[10px] leading-snug line-clamp-2 flex-1" style={{ color: '#62806A' }}>
+                  {p.excerpt}
+                </p>
+                <span className="text-[9px] mt-1 font-medium" style={{ color: '#4A7A5A' }}>
+                  {p.author}
+                </span>
               </a>
             ))}
           </div>
-          <div className="px-3 py-2 border-t border-[#DDD5C0]">
-            <Link href="/posts" className="text-[10px] font-medium" style={{ color: '#868C95' }}>
-              144+ פוסטים נוספים ←
-            </Link>
-          </div>
         </div>
 
-        {/* ── Q4 BOTTOM-RIGHT: TELEGRAM ─────────────────────────────────── */}
-        <div className="flex flex-col border-t border-[#DDD5C0] bg-white order-4"
-          style={{ minHeight: '50vh' }}>
-          <SectionHeader icon="✈" title="עדכונים אחרונים מטלגראם" href="https://t.me/PodcastFinance" linkLabel="@PodcastFinance" />
+        {/* ── Q4: TELEGRAM (bottom-left in RTL = fourth in DOM) ──────────── */}
+        <div className="flex flex-col overflow-hidden order-4" style={{ minHeight: '50vh', background: '#fff' }}>
+          <QuadHeader icon="✈" title="עדכונים מטלגראם" href="https://t.me/PodcastFinance" linkLabel="@PodcastFinance" />
           <div className="flex-1 overflow-hidden">
             <HomeTelegramFeed />
-          </div>
-          <div className="px-3 py-2 border-t border-[#DDD5C0]">
-            <a href="https://t.me/PodcastFinance" target="_blank" rel="noopener noreferrer"
-              className="text-[10px] font-medium" style={{ color: '#2AABEE' }}>
-              הצטרף לערוץ ←
-            </a>
           </div>
         </div>
       </section>
 
       {/* ═══ LEAD FORM ═════════════════════════════════════════════════════ */}
-      <section id="lead-form" className="py-20 bg-[#1E3651] relative overflow-hidden">
+      <section id="lead-form" className="py-20 relative overflow-hidden" style={{ background: '#1B3A28' }}>
         <div className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(134,140,149,0.6) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(134,140,149,0.4) 0%, transparent 50%)' }} />
+          style={{ backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(90,160,110,0.6) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(90,160,110,0.4) 0%, transparent 50%)' }} />
         <div className="relative z-10 max-w-lg mx-auto px-4 sm:px-6 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#868C95' }}>הצעד הראשון</p>
-          <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">פגישת זום חינמית</h2>
-          <p className="text-xl font-bold mb-1" style={{ color: '#A8AEB8' }}>scale-up.finance</p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#5A9A72' }}>הצעד הראשון</p>
+          <h2 className="text-2xl sm:text-3xl font-black text-white mb-1">פגישת זום חינמית</h2>
+          <p className="text-lg font-bold mb-1" style={{ color: '#7DB895' }}>scale-up.finance</p>
           <div className="gold-divider mb-6" />
-          <p className="text-[#8A95A8] text-sm mb-8 leading-relaxed">
+          <p className="text-sm mb-8 leading-relaxed" style={{ color: '#7AAA8A' }}>
             30 דקות עם יועץ השקעות בכיר — נבחן יחד את המצב הנוכחי,
             נזהה הזדמנויות ונסביר בדיוק מה ניתן לשפר.
           </p>
@@ -234,11 +231,11 @@ export default function HomePage() {
       </section>
 
       {/* ═══ ABOUT STRIP ═══════════════════════════════════════════════════ */}
-      <section className="py-12 bg-white border-t border-[#DDD5C0]">
+      <section className="py-12 border-t" style={{ background: '#fff', borderColor: '#BACEC4' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 text-center md:text-right">
-            <h3 className="text-lg font-black text-[#1E3651] mb-2">פיננסים — ניהול הון פרטי</h3>
-            <p className="text-[#5A4F3F] text-sm leading-relaxed mb-4">
+            <h3 className="text-lg font-black mb-2" style={{ color: '#1B3A28' }}>פיננסים — ניהול הון פרטי</h3>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: '#28402E' }}>
               Family Office ויועצי השקעות בכירים — מתמחים בניהול הון עבור אנשים ומשפחות.
               נסיון של עשרות שנים בשווקי ההון הישראלי והגלובלי.
             </p>
@@ -250,9 +247,9 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-3 flex-shrink-0">
             {[{ v: '25+', l: 'שנות ניסיון' }, { v: '144+', l: 'פוסטים' }, { v: 'Family', l: 'Office' }, { v: '4×', l: 'מגזין/שנה' }].map(s => (
-              <div key={s.l} className="text-center p-4 rounded-xl" style={{ background: '#F8F3E8' }}>
-                <div className="text-xl font-black text-[#1E3651]">{s.v}</div>
-                <div className="text-xs text-[#8C7B65]">{s.l}</div>
+              <div key={s.l} className="text-center p-4 rounded-xl" style={{ background: '#EAF3ED' }}>
+                <div className="text-xl font-black" style={{ color: '#1B3A28' }}>{s.v}</div>
+                <div className="text-xs" style={{ color: '#62806A' }}>{s.l}</div>
               </div>
             ))}
           </div>

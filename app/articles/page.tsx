@@ -21,7 +21,7 @@ const tagColors: Record<string, string> = {
 
 export default function ArticlesPage() {
   return (
-    <div className="min-h-screen bg-[#F8F3E8]">
+    <div className="min-h-screen bg-[#EAF3ED]">
       <PageHeader title="מאמרים עדכניים" subtitle='תכנים נבחרים מגופי המחקר ומדיה הפיננסיים המובילים — רשות ני"ע, כנסת, אוצר ועוד' />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
@@ -30,12 +30,12 @@ export default function ArticlesPage() {
               className="card-ivory rounded-xl group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 p-6 flex flex-col">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ background: `${tagColors[a.tag]}15`, color: tagColors[a.tag] }}>{a.tag}</span>
-                <span className="text-xs text-[#8C7B65]">{a.date}</span>
+                <span className="text-xs text-[#62806A]">{a.date}</span>
               </div>
-              <h3 className="font-semibold text-[#1E3651] mb-2 text-sm leading-snug group-hover:text-[#6A7280] transition-colors line-clamp-2">{a.title}</h3>
-              <p className="text-[#8C7B65] text-xs leading-relaxed flex-1 line-clamp-3 mb-4">{a.excerpt}</p>
+              <h3 className="font-semibold text-[#1B3A28] mb-2 text-sm leading-snug group-hover:text-[#4A7A5A] transition-colors line-clamp-2">{a.title}</h3>
+              <p className="text-[#62806A] text-xs leading-relaxed flex-1 line-clamp-3 mb-4">{a.excerpt}</p>
               <div className="flex items-center justify-between mt-auto">
-                <span className="text-xs text-[#5A4F3F]">מקור: {a.source}</span>
+                <span className="text-xs text-[#28402E]">מקור: {a.source}</span>
                 <span className="text-xs font-medium" style={{ color: '#868C95' }}>לכתבה ←</span>
               </div>
             </a>

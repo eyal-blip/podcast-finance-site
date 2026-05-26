@@ -29,8 +29,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#F8F3E8]/95 backdrop-blur-md border-b border-[#DDD5C0] shadow-sm'
-          : 'bg-[#F8F3E8]/90 backdrop-blur-sm border-b border-[#DDD5C0]'
+          ? 'bg-[#EAF3ED]/95 backdrop-blur-md border-b border-[#BACEC4] shadow-sm'
+          : 'bg-[#EAF3ED]/90 backdrop-blur-sm border-b border-[#BACEC4]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +38,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="leading-tight">
-              <div className="text-sm font-bold text-[#1E3651]">פיננסים | ניהול הון פרטי</div>
+              <div className="text-sm font-bold text-[#1B3A28]">פיננסים | ניהול הון פרטי</div>
               <div className="text-xs font-medium" style={{ color: '#868C95' }}>scale-up.finance</div>
             </div>
           </Link>
@@ -51,8 +51,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-150 ${
                   pathname === link.href
-                    ? 'text-[#6A7280] bg-[#868C95]/10'
-                    : 'text-[#5A4F3F] hover:text-[#1E3651] hover:bg-[#868C95]/10'
+                    ? 'text-[#4A7A5A] bg-[#868C95]/10'
+                    : 'text-[#28402E] hover:text-[#1B3A28] hover:bg-[#868C95]/10'
                 }`}
               >
                 {link.label}
@@ -62,7 +62,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="/contact" className="text-sm font-medium transition-colors duration-150" style={{ color: '#6A7280' }}>
+            <Link href="/contact" className="text-sm font-medium transition-colors duration-150" style={{ color: '#4A7A5A' }}>
               ← צור קשר
             </Link>
             <a href="/#lead-form" className="btn-gold text-sm px-4 py-2">
@@ -72,7 +72,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-md text-[#5A4F3F] hover:text-[#1E3651]"
+            className="lg:hidden p-2 rounded-md text-[#28402E] hover:text-[#1B3A28]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="תפריט"
           >
@@ -89,24 +89,24 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[#F8F3E8] border-t border-[#DDD5C0]">
+        <div className="lg:hidden bg-[#EAF3ED] border-t border-[#BACEC4]">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`block px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  pathname === link.href ? 'text-[#6A7280] bg-[#868C95]/10' : 'text-[#5A4F3F]'
+                  pathname === link.href ? 'text-[#4A7A5A] bg-[#868C95]/10' : 'text-[#28402E]'
                 }`}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-3 border-t border-[#DDD5C0] mt-3 flex flex-col gap-2">
+            <div className="pt-3 border-t border-[#BACEC4] mt-3 flex flex-col gap-2">
               <Link href="/contact"
                 className="block px-3 py-2 text-sm font-medium text-center rounded-md border-2"
-                style={{ color: '#6A7280', borderColor: '#868C95' }}
+                style={{ color: '#4A7A5A', borderColor: '#868C95' }}
                 onClick={() => setMobileOpen(false)}
               >
                 צור קשר

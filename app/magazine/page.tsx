@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function MagazinePage() {
   return (
-    <div className="min-h-screen bg-[#F8F3E8]">
+    <div className="min-h-screen bg-[#EAF3ED]">
       <PageHeader title="מגזין הבנקאות הפרטית" subtitle="מגזין רבעוני ללקוחות הבנקאות הפרטית של כל הבנקים — תכנים פיננסיים, תרבות, פנאי ואיכות חיים" />
 
       {/* Magazine embed */}
