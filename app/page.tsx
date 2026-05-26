@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import LeadForm from '@/components/LeadForm'
 import HomeTelegramFeed from '@/components/HomeTelegramFeed'
+import HomeMapEmbed from '@/components/HomeMapEmbed'
 
 // ─── Pension Product Network — animated SVG background ───────────────────
 function PensionNetworkBackground() {
@@ -165,18 +166,11 @@ export default function HomePage() {
         {/* ── Q2: MAP (top-left in RTL = second in DOM) ──────────────────── */}
         <div id="map" className="flex flex-col overflow-hidden order-2"
           style={{ minHeight: '50vh', background: '#fff' }}>
-          {/* iframe fills entire quadrant — gemel-net has its own top bar */}
-          <iframe
-            src="https://gemel-net.netlify.app/map"
-            title="מפת המוצרים הפנסיוניים"
-            className="w-full flex-1 border-0"
-            style={{ minHeight: '50vh' }}
-            loading="lazy"
-          />
+          <HomeMapEmbed />
         </div>
 
-        {/* ── Q3: POSTS (bottom-right in RTL = third in DOM) ─────────────── */}
-        <div className="flex flex-col overflow-hidden order-3" style={{ minHeight: '50vh', background: '#fff' }}>
+        {/* ── Q3: POSTS (bottom-right on desktop, below telegram on mobile) ── */}
+        <div className="flex flex-col overflow-hidden order-4 md:order-3" style={{ minHeight: '50vh', background: '#fff' }}>
           <QuadHeader icon="◈" title="פוסטים אחרונים" href="/posts" linkLabel="כל 144+ הפוסטים" />
           <div className="grid grid-cols-4 overflow-hidden flex-1" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
             {latestPosts.map((p) => (
@@ -205,8 +199,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* ── Q4: TELEGRAM (bottom-left in RTL = fourth in DOM) ──────────── */}
-        <div className="flex flex-col overflow-hidden order-4" style={{ minHeight: '50vh', background: '#fff' }}>
+        {/* ── Q4: TELEGRAM (bottom-left on desktop, above posts on mobile) ── */}
+        <div className="flex flex-col overflow-hidden order-3 md:order-4" style={{ minHeight: '50vh', background: '#fff' }}>
           <QuadHeader icon="✈" title="עדכונים מטלגראם" href="https://t.me/PodcastFinance" linkLabel="@PodcastFinance" />
           <div className="flex-1 overflow-hidden">
             <HomeTelegramFeed />
