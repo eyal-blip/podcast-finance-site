@@ -5,13 +5,13 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const navLinks = [
-  { href: '/podcast', label: 'פודקאסט YouTube' },
-  { href: '/telegram', label: 'ערוץ טלגראם' },
-  { href: '/articles', label: 'מאמרים' },
+  { href: '/#map', label: 'מפה פנסיונית' },
   { href: '/posts', label: 'פוסטים' },
+  { href: '/telegram', label: 'טלגראם' },
+  { href: '/podcast', label: 'פודקאסט' },
+  { href: '/articles', label: 'מאמרים' },
   { href: '/magazine', label: 'מגזין' },
   { href: '/about', label: 'אודות' },
-  { href: '/contact', label: 'צור קשר' },
 ]
 
 export default function Navbar() {
@@ -38,8 +38,8 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="leading-tight">
-              <div className="text-sm font-bold text-[#1E3651]">פודקאסט פיננסים</div>
-              <div className="text-xs font-medium" style={{ color: '#868C95' }}>podcast.finance</div>
+              <div className="text-sm font-bold text-[#1E3651]">פיננסים | ניהול הון פרטי</div>
+              <div className="text-xs font-medium" style={{ color: '#868C95' }}>scale-up.finance</div>
             </div>
           </Link>
 
@@ -62,18 +62,12 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="https://t.me/PodcastFinance"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium transition-colors duration-150"
-              style={{ color: '#6A7280' }}
-            >
-              ← הצטרף לטלגראם
-            </a>
-            <Link href="/contact" className="btn-gold text-sm px-4 py-2">
-              פגישת ייעוץ
+            <Link href="/contact" className="text-sm font-medium transition-colors duration-150" style={{ color: '#6A7280' }}>
+              ← צור קשר
             </Link>
+            <a href="/#lead-form" className="btn-gold text-sm px-4 py-2">
+              פגישת זום חינמית
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,18 +104,16 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-3 border-t border-[#DDD5C0] mt-3 flex flex-col gap-2">
-              <a
-                href="https://t.me/PodcastFinance"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link href="/contact"
                 className="block px-3 py-2 text-sm font-medium text-center rounded-md border-2"
                 style={{ color: '#6A7280', borderColor: '#868C95' }}
+                onClick={() => setMobileOpen(false)}
               >
-                הצטרף לטלגראם
-              </a>
-              <Link href="/contact" className="btn-gold text-sm text-center" onClick={() => setMobileOpen(false)}>
-                פגישת ייעוץ
+                צור קשר
               </Link>
+              <a href="/#lead-form" className="btn-gold text-sm text-center" onClick={() => setMobileOpen(false)}>
+                פגישת זום חינמית
+              </a>
             </div>
           </div>
         </div>

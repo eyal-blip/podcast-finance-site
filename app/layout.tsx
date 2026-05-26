@@ -4,14 +4,14 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'פודקאסט פיננסים | ידע פיננסי לבנקאות הפרטית',
-  description: 'ידע פיננסי, פודקאסטים, מאמרים עדכניים ומגזין הבנקאות הפרטית — לקוחות הבנקאות הפרטית של כל הבנקים.',
-  keywords: 'פודקאסט פיננסים, בנקאות פרטית, ניהול הון, השקעות, מגזין פיננסי',
+  title: 'scale-up.finance | ניהול פנסיה חכם — קופות גמל, קרן השתלמות, ביטוח מנהלים',
+  description: 'המוצרים הפנסיוניים שלך — קופת גמל, קרן השתלמות, ביטוח מנהלים וקרן פנסיה — מורכבים. אנחנו מפשטים. פגישת זום ראשונית ללא עלות.',
+  keywords: 'קופת גמל, קרן השתלמות, ביטוח מנהלים, קרן פנסיה, ניהול פנסיה, יועץ השקעות, scale-up.finance',
   openGraph: {
-    title: 'פודקאסט פיננסים',
-    description: 'ידע פיננסי לקוחות הבנקאות הפרטית',
-    url: 'https://podcast.finance',
-    siteName: 'פודקאסט פיננסים',
+    title: 'scale-up.finance | ניהול פנסיה חכם',
+    description: 'המוצרים הפנסיוניים שלך מורכבים — אנחנו מפשטים. פגישת זום ראשונית ללא עלות.',
+    url: 'https://scale-up.finance',
+    siteName: 'scale-up.finance',
     locale: 'he_IL',
     type: 'website',
   },
