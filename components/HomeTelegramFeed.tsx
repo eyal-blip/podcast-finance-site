@@ -73,15 +73,15 @@ export default function HomeTelegramFeed() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/.netlify/functions/telegram-feed?limit=9&_ts=' + Date.now())
+    fetch('/.netlify/functions/telegram-feed?limit=12&_ts=' + Date.now())
       .then(r => r.json())
-      .then(j => { setPosts((j.items || j || []).slice(0, 9)); setLoading(false) })
+      .then(j => { setPosts((j.items || j || []).slice(0, 12)); setLoading(false) })
       .catch(() => setLoading(false))
   }, [])
 
   if (loading) return (
-    <div className="grid grid-cols-3 h-full" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
-      {Array(9).fill(null).map((_, i) => (
+    <div className="grid grid-cols-4 h-full" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
+      {Array(12).fill(null).map((_, i) => (
         <div key={i} className="animate-pulse"
           style={{ background: '#E4F0E8', borderBottom: '1px solid #BACEC4', borderLeft: '1px solid #BACEC4' }} />
       ))}
@@ -98,7 +98,7 @@ export default function HomeTelegramFeed() {
   )
 
   return (
-    <div className="grid grid-cols-3 overflow-hidden h-full" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
+    <div className="grid grid-cols-4 overflow-hidden h-full" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
       {posts.map((p, i) => <MiniCard key={i} p={p} />)}
     </div>
   )

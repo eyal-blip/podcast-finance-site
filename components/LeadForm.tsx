@@ -6,6 +6,7 @@ export default function LeadForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -22,6 +23,7 @@ export default function LeadForm() {
         setStatus('success')
         setName('')
         setPhone('')
+        setEmail('')
       } else {
         setStatus('error')
       }
@@ -61,7 +63,7 @@ export default function LeadForm() {
           placeholder="ישראל ישראלי"
           value={name}
           onChange={e => setName(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl text-sm bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-[#868C95] focus:bg-white/15 transition-all"
+          className="w-full px-4 py-3 rounded-xl text-sm bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-[#5A9A72] focus:bg-white/15 transition-all"
         />
       </div>
 
@@ -74,7 +76,21 @@ export default function LeadForm() {
           placeholder="050-0000000"
           value={phone}
           onChange={e => setPhone(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl text-sm bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-[#868C95] focus:bg-white/15 transition-all"
+          className="w-full px-4 py-3 rounded-xl text-sm bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-[#5A9A72] focus:bg-white/15 transition-all"
+          dir="ltr"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-semibold text-white mb-1.5">אימייל</label>
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="your@email.com"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className="w-full px-4 py-3 rounded-xl text-sm bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-[#5A9A72] focus:bg-white/15 transition-all"
           dir="ltr"
         />
       </div>
