@@ -33,17 +33,11 @@ const SAVINGS_OPTIONS = [
 
 export default function CampaignLeadForm({ variant }: { variant: string }) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-  const [step, setStep] = useState<1 | 2>(1)
   const [savings, setSavings] = useState('')
   const [slot, setSlot] = useState('')
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
-
-  function chooseSavings(value: string) {
-    setSavings(value)
-    setStep(2)
-  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -81,31 +75,6 @@ export default function CampaignLeadForm({ variant }: { variant: string }) {
 
   return (
     <div className="w-full max-w-sm mx-auto">
-      {/* progress */}
-      <div className="flex items-center gap-2 mb-5">
-        <div className="h-1 flex-1 rounded-full" style={{ background: '#5A9A72' }} />
-        <div className="h-1 flex-1 rounded-full" style={{ background: step === 2 ? '#5A9A72' : 'rgba(255,255,255,0.15)' }} />
-        <span className="text-white/50 text-xs whitespace-nowrap">{step}/2</span>
-      </div>
-
-      {step === 1 && (
-        <div className="flex flex-col gap-3">
-          <p className="text-white font-bold text-base mb-1">איפה עיקר החיסכון שלך?</p>
-          {SAVINGS_OPTIONS.map(opt => (
-            <button
-              key={opt}
-              type="button"
-              onClick={() => chooseSavings(opt)}
-              className="w-full text-right px-4 py-3 rounded-xl text-sm bg-white/10 border border-white/20 text-white hover:bg-white/15 hover:border-[#5A9A72] transition-all"
-            >
-              {opt}
-            </button>
-          ))}
-          <p className="text-white/40 text-xs text-center mt-1">שאלה אחת — ואז קובעים זום</p>
-        </div>
-      )}
-
-      {step === 2 && (
         <form
           name="zoom-meeting"
           method="POST"
@@ -117,20 +86,25 @@ export default function CampaignLeadForm({ variant }: { variant: string }) {
           <input type="hidden" name="form-name" value="zoom-meeting" />
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="variant" value={variant} />
-          <input type="hidden" name="savings" value={savings} />
           <input type="hidden" name="slot" value={slot} />
-
-          <button
-            type="button"
-            onClick={() => setStep(1)}
-            className="text-white/50 text-xs self-start hover:text-white/80 transition-colors"
-          >
-            → {savings} (שינוי)
-          </button>
 
           <div>
             <p className="text-white font-bold text-base mb-3">בחר חלון לפגישת הזום</p>
             <SlotPicker value={slot} onChange={setSlot} />
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-white mb-1.5">איפה עיקר החיסכון שלך?</label>
+            <select
+              name="savings" required
+              value={savings} onChange={e => setSavings(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl text-sm bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#5A9A72] focus:bg-white/15 transition-all appearance-none"
+            >
+              <option value="" disabled className="text-black">בחר…</option>
+              {SAVINGS_OPTIONS.map(opt => (
+                <option key={opt} value={opt} className="text-black">{opt}</option>
+              ))}
+            </select>
           </div>
 
           <div>
@@ -177,7 +151,6 @@ export default function CampaignLeadForm({ variant }: { variant: string }) {
 
           <p className="text-white/40 text-xs text-center">ללא עלות · ללא התחייבות · פגישה בזום 30 דקות</p>
         </form>
-      )}
     </div>
   )
 }
