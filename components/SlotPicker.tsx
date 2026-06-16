@@ -37,8 +37,11 @@ export default function SlotPicker({
 
   const [activeDay, setActiveDay] = useState<string>('')
   useEffect(() => {
-    if (days.length && !days.some(d => d.dayKey === activeDay)) setActiveDay(days[0].dayKey)
-  }, [days, activeDay])
+    if (days.length && !days.some(d => d.dayKey === activeDay)) {
+      setActiveDay(days[0].dayKey)
+      if (!value && days[0].slots.length) onChange(days[0].slots[0].label)
+    }
+  }, [days, activeDay, value, onChange])
 
   const activeSlots = days.find(d => d.dayKey === activeDay)?.slots ?? []
 
@@ -62,7 +65,7 @@ export default function SlotPicker({
           <button
             key={d.dayKey}
             type="button"
-            onClick={() => setActiveDay(d.dayKey)}
+            onClick={() => { setActiveDay(d.dayKey); if (d.slots.length) onChange(d.slots[0].label) }}
             className={`flex-shrink-0 px-3 py-2 rounded-xl text-xs whitespace-nowrap border transition-all ${
               d.dayKey === activeDay
                 ? 'bg-[#5A9A72] border-[#5A9A72] text-white'
