@@ -131,6 +131,10 @@ export default function LandingPage({ params }: { params: { variant: string } })
               <span key={t} className="font-semibold">{t}</span>
             ))}
           </div>
+          <div className="mt-8 inline-block rounded-xl px-6 py-3 text-sm sm:text-base font-bold"
+            style={{ background: 'rgba(142,207,166,0.12)', border: '1px solid #5A9A72', color: '#CDE8D5' }}>
+            השירות מתאים ואפשרי לחסכונות מצטברים החל מ־<span style={{ color: '#8ECFA6' }}>1,000,000&nbsp;₪</span>
+          </div>
         </div>
       </section>
 
