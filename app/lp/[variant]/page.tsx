@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import CampaignLeadForm from '@/components/CampaignLeadForm'
+import TrustStrip from '@/components/TrustStrip'
 
 type Variant = {
   eyebrow: string
@@ -100,13 +101,6 @@ export default function LandingPage({ params }: { params: { variant: string } })
   const v = VARIANTS[params.variant]
   if (!v) notFound()
 
-  const trust = [
-    { v: '144+', l: 'פוסטים מקוריים' },
-    { v: 'מתעדכן', l: 'ערוץ מאמרים שוטף' },
-    { v: 'Family', l: 'Office לבעלי הון' },
-    { v: 'בלעדי', l: 'פיננסים פנסיוני נט' },
-  ]
-
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────── */}
@@ -151,22 +145,8 @@ export default function LandingPage({ params }: { params: { variant: string } })
         </div>
       </section>
 
-      {/* ─── TRUST STRIP ──────────────────────────────────────── */}
-      <section className="py-10 border-t border-b" style={{ background: '#fff', borderColor: '#BACEC4' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <p className="text-center text-sm font-bold mb-6" style={{ color: '#1B3A28' }}>
-            פיננסים — ניהול הון פרטי · ניסיון של עשרות שנים בשווקי ההון
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {trust.map(s => (
-              <div key={s.l} className="text-center p-4 rounded-xl" style={{ background: '#EAF3ED' }}>
-                <div className="text-lg font-black" style={{ color: '#1B3A28' }}>{s.v}</div>
-                <div className="text-xs" style={{ color: '#62806A' }}>{s.l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ─── TRUST STRIP (interactive) ────────────────────────── */}
+      <TrustStrip />
 
       {/* ─── LEAD FORM ────────────────────────────────────────── */}
       <section id="lead-form" className="py-20 relative overflow-hidden" style={{ background: '#1B3A28' }}>
