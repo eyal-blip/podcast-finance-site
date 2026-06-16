@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import SlotPicker from './SlotPicker'
 
 export default function LeadForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [slot, setSlot] = useState('')
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
@@ -21,6 +23,7 @@ export default function LeadForm() {
       })
       if (res.ok) {
         setStatus('success')
+        setSlot('')
         setName('')
         setPhone('')
         setEmail('')
@@ -53,6 +56,12 @@ export default function LeadForm() {
     >
       <input type="hidden" name="form-name" value="zoom-meeting" />
       <input type="hidden" name="bot-field" />
+      <input type="hidden" name="slot" value={slot} />
+
+      <div>
+        <p className="text-base font-bold text-white mb-3">בחר חלון לפגישת הזום</p>
+        <SlotPicker value={slot} onChange={setSlot} />
+      </div>
 
       <div>
         <label className="block text-sm font-semibold text-white mb-1.5">שם מלא</label>
@@ -99,9 +108,13 @@ export default function LeadForm() {
         <p className="text-red-300 text-xs text-center">שגיאה בשליחה — אפשר להתקשר ישירות: 07777-83000</p>
       )}
 
+      {!slot && (
+        <p className="text-white/50 text-xs text-center">בחר חלון זמן למעלה כדי להמשיך</p>
+      )}
+
       <button
         type="submit"
-        disabled={status === 'submitting'}
+        disabled={status === 'submitting' || !slot}
         className="btn-gold w-full justify-center py-3 text-base font-bold disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === 'submitting' ? '...' : 'קבע פגישת זום חינמית ←'}

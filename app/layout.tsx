@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import SiteChrome from '@/components/SiteChrome'
+import Analytics from '@/components/Analytics'
 
 export const metadata: Metadata = {
   title: 'scale-up.finance | ניהול פנסיה חכם — קופות גמל, קרן השתלמות, ביטוח מנהלים',
@@ -29,9 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-[#EAF3ED] text-[#1B3A28] font-sans antialiased">
-        <Navbar />
-        <main className="pt-16 md:pt-20">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
+        <Analytics />
       </body>
     </html>
   )

@@ -1,6 +1,6 @@
 #!/bin/bash
 # פריסה מהירה ל-Netlify דרך GitHub
-cd "/Users/macbook/Documents/Claude/Projects/podcast.finance-site"
+cd "/Users/macbook/Documents/claude/projects/scal-up.finance"
 git add -A
 git commit -m "${1:-update}"
 git push
