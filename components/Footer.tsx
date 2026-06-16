@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#1A3520] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#3A5A48]">
-          <p>© 2026 פיננסים ניהול הון פרטי בע״מ | כל הזכויות שמורות</p>
+          <p><a href="/admin/availability.html" aria-label="ניהול" className="hover:text-[#8AB898] transition-colors">©</a> 2026 פיננסים ניהול הון פרטי בע״מ | כל הזכויות שמורות</p>
           <div className="flex gap-4">
             <a href="https://nihulhon.co.il/policy" target="_blank" rel="noopener noreferrer" className="hover:text-[#8AB898] transition-colors">מדיניות פרטיות</a>
             <span>|</span>
