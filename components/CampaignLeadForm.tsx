@@ -45,7 +45,9 @@ export default function CampaignLeadForm({ variant }: { variant: string }) {
     const form = e.currentTarget
     const data = new FormData(form)
     try {
-      const res = await fetch('/', {
+      // Must POST to the static forms file — POSTing to "/" is swallowed by the
+      // Next.js SSR handler and never reaches Netlify's form processor.
+      const res = await fetch('/netlify-forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
